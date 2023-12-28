@@ -1,0 +1,635 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:1:1-84:12
+INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:1:1-84:12
+INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:1:1-84:12
+INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:1:1-84:12
+MERGED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:1:1-84:12
+MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] C:\Users\insha\.gradle\caches\transforms-3\ef55eb2f87a4889b0a36d8fb9e6a9736\transformed\jetified-flipper-network-plugin-0.125.0\AndroidManifest.xml:8:1-15:12
+MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\insha\.gradle\caches\transforms-3\d470911846cce8cd9a0422b44d27f400\transformed\jetified-flipper-fresco-plugin-0.125.0\AndroidManifest.xml:8:1-15:12
+MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\insha\.gradle\caches\transforms-3\a822b96874f1c3116b8bb7f5d234b8b0\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:8:1-18:12
+MERGED from [:rnfgservice] C:\Users\insha\Downloads\frontend\node_modules\@videosdk.live\react-native-foreground-service\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:rnwebrtc] C:\Users\insha\Downloads\frontend\node_modules\@videosdk.live\react-native-webrtc\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:rnincallmanager] C:\Users\insha\Downloads\frontend\node_modules\@videosdk.live\react-native-incallmanager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-html-to-pdf] C:\Users\insha\Downloads\frontend\node_modules\react-native-html-to-pdf\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-async-storage_async-storage] C:\Users\insha\Downloads\frontend\node_modules\@react-native-async-storage\async-storage\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-community_datetimepicker] C:\Users\insha\Downloads\frontend\node_modules\@react-native-community\datetimepicker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-community_slider] C:\Users\insha\Downloads\frontend\node_modules\@react-native-community\slider\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-community_viewpager] C:\Users\insha\Downloads\frontend\node_modules\@react-native-community\viewpager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-picker_picker] C:\Users\insha\Downloads\frontend\node_modules\@react-native-picker\picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:videosdk.live_react-native-incallmanager] C:\Users\insha\Downloads\frontend\node_modules\@videosdk.live\react-native-incallmanager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:lottie-react-native] C:\Users\insha\Downloads\frontend\node_modules\lottie-react-native\src\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-document-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-document-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
+MERGED from [:react-native-fs] C:\Users\insha\Downloads\frontend\node_modules\react-native-fs\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-gesture-handler] C:\Users\insha\Downloads\frontend\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-33:12
+MERGED from [:react-native-image-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
+MERGED from [:react-native-orientation-locker] C:\Users\insha\Downloads\frontend\node_modules\react-native-orientation-locker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-safe-area-context] C:\Users\insha\Downloads\frontend\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-screens] C:\Users\insha\Downloads\frontend\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-svg] C:\Users\insha\Downloads\frontend\node_modules\react-native-svg\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-vector-icons] C:\Users\insha\Downloads\frontend\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-video] C:\Users\insha\Downloads\frontend\node_modules\react-native-video\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-webview] C:\Users\insha\Downloads\frontend\node_modules\react-native-webview\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
+MERGED from [com.facebook.react:react-android:0.72.7] C:\Users\insha\.gradle\caches\transforms-3\230277fda71ebe88808d0606150f2cc5\transformed\jetified-react-android-0.72.7-debug\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\45cdbd662cb535685e9714fae2c73db1\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.facebook.react:hermes-android:0.72.7] C:\Users\insha\.gradle\caches\transforms-3\202263bbca9af8bdb22cdc672def39c9\transformed\jetified-hermes-android-0.72.7-debug\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.fbjni:fbjni:0.3.0] C:\Users\insha\.gradle\caches\transforms-3\2da769d3f5ed9a358d776911b4ad6b60\transformed\jetified-fbjni-0.3.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:flipper:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\1325639634097a5a4fef258a4d0ab256\transformed\jetified-flipper-2.6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:stetho:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\8606095c9317091aecd7f10ff9c62554\transformed\jetified-stetho-2.6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:fresco:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\e9f6e6fef8deea8e96af67b1df019169\transformed\jetified-fresco-2.6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:soloader:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\65db0b2f3547482a1b8f71a561241ba7\transformed\jetified-soloader-2.6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.5.0] C:\Users\insha\.gradle\caches\transforms-3\3d3a723d1eae089cd425160351cac9e8\transformed\jetified-imagepipeline-okhttp3-2.5.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\ac7f6addae15e46992d4659de0437adc\transformed\jetified-drawee-2.6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:nativeimagefilters:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\9aeab8c9da0212cb5953c4bc60cc1006\transformed\jetified-nativeimagefilters-2.6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:memory-type-native:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\42e53805ba3dc74dffcd9c32f6c5304f\transformed\jetified-memory-type-native-2.6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:memory-type-java:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\79abe363c3bfa1de6b52d7208fe27db4\transformed\jetified-memory-type-java-2.6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-native:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\93adc85cb0f7632c7645e99000f53843\transformed\jetified-imagepipeline-native-2.6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.10.5] C:\Users\insha\.gradle\caches\transforms-3\54493ab15d47c6fd9af0134919789f5b\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:2:1-17:12
+MERGED from [com.facebook.fresco:memory-type-ashmem:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\54681efe32f308e1c65a55f7e86be442\transformed\jetified-memory-type-ashmem-2.6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\adf5575a1fa67870af322dec09baa30e\transformed\jetified-imagepipeline-2.6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\93032744383eb834405024927045c86d\transformed\jetified-nativeimagetranscoder-2.6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\bbca947c40bea0cd05210ac99883cbff\transformed\jetified-imagepipeline-base-2.6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.airbnb.android:lottie:5.1.1] C:\Users\insha\.gradle\caches\transforms-3\c746350100e58287dde42a45d68d5a5a\transformed\jetified-lottie-5.1.1\AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.yalantis:ucrop:2.2.6-native] C:\Users\insha\.gradle\caches\transforms-3\13c5600f5553b175db1e6d7f26c67602\transformed\jetified-ucrop-2.2.6-native\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.material:material:1.9.0] C:\Users\insha\.gradle\caches\transforms-3\8c4f2f8921d919fc66b9228629d82bd1\transformed\material-1.9.0\AndroidManifest.xml:17:1-26:12
+MERGED from [com.github.adityaxjha:Android-ScalableVideoView:10e7b4da8b] C:\Users\insha\.gradle\caches\transforms-3\9b08c66b6ed60b9d5de8ee250c2026ca\transformed\jetified-Android-ScalableVideoView-10e7b4da8b\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.appcompat:appcompat-resources:1.5.0] C:\Users\insha\.gradle\caches\transforms-3\8f52846204b871412aa2d17e0d132fe4\transformed\jetified-appcompat-resources-1.5.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\insha\.gradle\caches\transforms-3\c5c161527a9bc6ccd1531712533befcb\transformed\constraintlayout-2.0.1\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.5.0] C:\Users\insha\.gradle\caches\transforms-3\6e4ea8adcc66f2c31600cebc3be7fb4e\transformed\appcompat-1.5.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\insha\.gradle\caches\transforms-3\c4ebd1622afcc720d1b92ea4ae83c8cb\transformed\sqlite-framework-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.autofill:autofill:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\2de878c88954c4b4be93cbf1547266ad\transformed\jetified-autofill-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\f8a9adcdff93af3957cc452f1ae54eae\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\insha\.gradle\caches\transforms-3\59c6858098330765d4f3e44a58ff2f9e\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.5.0] C:\Users\insha\.gradle\caches\transforms-3\7947bbb373c3399a501ec61f79268ed3\transformed\jetified-activity-1.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\11d6948eccf7917eeca75044ad7fc84d\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\insha\.gradle\caches\transforms-3\b48063148ce9527ff312a788eb659625\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\insha\.gradle\caches\transforms-3\466a7bf1c7ede8ba794d50ec36633e93\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\18968fbebafb8d81c513f35cb9581721\transformed\jetified-tracing-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.facebook.fresco:middleware:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\4121d72111b2c56efa9def7761e4673e\transformed\jetified-middleware-2.6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:ui-common:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\f8a3e78b182b3337ae13e2a4ff45a71e\transformed\jetified-ui-common-2.6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\17a783689788f9988376a71b17af81f7\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\54644cf3cb58896f30d5493e142d9813\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\d868ff5b13c1c549a7d4a6d7aabf98b8\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.0] C:\Users\insha\.gradle\caches\transforms-3\6f6752bdbd569254d17feebf4123ac82\transformed\lifecycle-viewmodel-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.0] C:\Users\insha\.gradle\caches\transforms-3\6c1b5090171299fe8c5596ac39d99c9f\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] C:\Users\insha\.gradle\caches\transforms-3\90fab65a993fe3c4b41fc5bc8993d114\transformed\exifinterface-1.3.3\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-ktx:1.8.0] C:\Users\insha\.gradle\caches\transforms-3\32ce586b0c573b066064c6cfa81b9e02\transformed\jetified-core-ktx-1.8.0\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b5de9b2fd7b5af3a4e74556c38bb2121\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.webkit:webkit:1.4.0] C:\Users\insha\.gradle\caches\transforms-3\4d2167c7d887f164f0918e03611b6ae8\transformed\webkit-1.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\insha\.gradle\caches\transforms-3\38d209462a6436b7856381ab646a9b43\transformed\sqlite-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\c2e0fb64b89d4f18f372bd5e42b04e81\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\58654e32b23fae838eed3673c0014754\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\112a43cdf5a959f1f37c1dfa57e79a2f\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\abfa5be8dceab98024915c7993d23fc7\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\insha\.gradle\caches\transforms-3\9acd1dede48963343434185cf7df2e59\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\e7aa87b69c4f24cc5b61935107039bf3\transformed\transition-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\0eb267e37b44fc36985bc8496cd4ad6e\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.8.0] C:\Users\insha\.gradle\caches\transforms-3\375a583d1ea3ef1e574b6b9f579481e9\transformed\core-1.8.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\insha\.gradle\caches\transforms-3\bc48492949d405884fb841e24ace82e4\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\6b90aa6ba64a3ff265f1fe1ab5ccb32e\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\6964837811bd213ca8c61721694dde3e\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\4ba77d580e9aaad3c228fcf3bf55c7f9\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.0] C:\Users\insha\.gradle\caches\transforms-3\760227ca3919959c654a6f684c51b975\transformed\lifecycle-runtime-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\1596282e77d26d05d2fc566c1ed94348\transformed\jetified-savedstate-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\insha\.gradle\caches\transforms-3\e98b4c4894cd31f69c5c8c2f130621ed\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.0] C:\Users\insha\.gradle\caches\transforms-3\671fff26791ac6bb9e012ee19a0d5018\transformed\lifecycle-livedata-core-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\insha\.gradle\caches\transforms-3\472921ffce6f4a0c29ea0e650e15775f\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\958a1f6d235171410bc48032ca703591\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\c6d31442d00ce59d58f1c2b2141a22ed\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\09d372ee2b25fac13630213197d239c7\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.tom-roush:pdfbox-android:1.8.10.3] C:\Users\insha\.gradle\caches\transforms-3\5da8c6dec92c3ec7d50437a7fc4e1932\transformed\jetified-pdfbox-android-1.8.10.3\AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.fresco:fbcore:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\c0bc4557ef8f9e1e4d05eecd7170718f\transformed\jetified-fbcore-2.6.0\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\3abf82016b48ea0555b2487825224657\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
+INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml:2:1-13:12
+INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml:2:1-13:12
+INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml:2:1-13:12
+	package
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:2:5-31
+		INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:2:5-31
+		INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:1:1-84:12
+		INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:1:1-84:12
+		INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:4:5-67
+MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\insha\.gradle\caches\transforms-3\a822b96874f1c3116b8bb7f5d234b8b0\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:15:5-67
+MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\insha\.gradle\caches\transforms-3\a822b96874f1c3116b8bb7f5d234b8b0\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:15:5-67
+MERGED from [:lottie-react-native] C:\Users\insha\Downloads\frontend\node_modules\lottie-react-native\src\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-67
+MERGED from [:lottie-react-native] C:\Users\insha\Downloads\frontend\node_modules\lottie-react-native\src\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-67
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:4:22-64
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:5:5-80
+MERGED from [:react-native-fs] C:\Users\insha\Downloads\frontend\node_modules\react-native-fs\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-81
+MERGED from [:react-native-fs] C:\Users\insha\Downloads\frontend\node_modules\react-native-fs\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-81
+MERGED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:5-81
+MERGED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:5-81
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:5:22-78
+uses-permission#android.permission.BLUETOOTH
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:6:5-8:38
+	android:maxSdkVersion
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:8:9-35
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:7:9-52
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:9:5-11:38
+	android:maxSdkVersion
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:11:9-35
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:10:9-58
+uses-permission#android.permission.BLUETOOTH_CONNECT
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:14:5-76
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:14:22-73
+uses-permission#android.permission.CAMERA
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:16:5-65
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:16:22-62
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:17:5-80
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:17:22-77
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:18:5-71
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:18:22-68
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:19:5-78
+MERGED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:19:5-78
+MERGED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:19:22-75
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:20:5-76
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:20:22-74
+uses-permission#android.permission.WAKE_LOCK
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:21:5-68
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:21:22-65
+uses-feature#android.hardware.camera
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:22:5-60
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:22:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:23:5-70
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:23:19-67
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:26:5-75
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:26:22-72
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:28:5-79
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:28:22-76
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:29:5-79
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:29:22-76
+queries
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:42:5-47:15
+MERGED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-13:15
+MERGED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-13:15
+intent#action:name:android.intent.action.VIEW+data:mimeType:application/pdf
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:43:9-46:18
+action#android.intent.action.VIEW
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:44:13-65
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:44:21-62
+data
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:45:13-56
+	android:mimeType
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:45:19-53
+application
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:49:5-83:19
+MERGED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:49:5-83:19
+MERGED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:49:5-83:19
+MERGED from [:react-native-community_datetimepicker] C:\Users\insha\Downloads\frontend\node_modules\@react-native-community\datetimepicker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-20
+MERGED from [:react-native-community_datetimepicker] C:\Users\insha\Downloads\frontend\node_modules\@react-native-community\datetimepicker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-20
+MERGED from [:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:5-31:19
+MERGED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:5-31:19
+MERGED from [:react-native-image-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-image-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-webview] C:\Users\insha\Downloads\frontend\node_modules\react-native-webview\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-webview] C:\Users\insha\Downloads\frontend\node_modules\react-native-webview\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
+MERGED from [com.facebook.soloader:soloader:0.10.5] C:\Users\insha\.gradle\caches\transforms-3\54493ab15d47c6fd9af0134919789f5b\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:11:5-15:19
+MERGED from [com.facebook.soloader:soloader:0.10.5] C:\Users\insha\.gradle\caches\transforms-3\54493ab15d47c6fd9af0134919789f5b\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:11:5-15:19
+MERGED from [com.airbnb.android:lottie:5.1.1] C:\Users\insha\.gradle\caches\transforms-3\c746350100e58287dde42a45d68d5a5a\transformed\jetified-lottie-5.1.1\AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:5.1.1] C:\Users\insha\.gradle\caches\transforms-3\c746350100e58287dde42a45d68d5a5a\transformed\jetified-lottie-5.1.1\AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.material:material:1.9.0] C:\Users\insha\.gradle\caches\transforms-3\8c4f2f8921d919fc66b9228629d82bd1\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.material:material:1.9.0] C:\Users\insha\.gradle\caches\transforms-3\8c4f2f8921d919fc66b9228629d82bd1\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\insha\.gradle\caches\transforms-3\c5c161527a9bc6ccd1531712533befcb\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\insha\.gradle\caches\transforms-3\c5c161527a9bc6ccd1531712533befcb\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\insha\.gradle\caches\transforms-3\b48063148ce9527ff312a788eb659625\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\insha\.gradle\caches\transforms-3\b48063148ce9527ff312a788eb659625\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\insha\.gradle\caches\transforms-3\466a7bf1c7ede8ba794d50ec36633e93\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\insha\.gradle\caches\transforms-3\466a7bf1c7ede8ba794d50ec36633e93\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.core:core:1.8.0] C:\Users\insha\.gradle\caches\transforms-3\375a583d1ea3ef1e574b6b9f579481e9\transformed\core-1.8.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.8.0] C:\Users\insha\.gradle\caches\transforms-3\375a583d1ea3ef1e574b6b9f579481e9\transformed\core-1.8.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\insha\.gradle\caches\transforms-3\bc48492949d405884fb841e24ace82e4\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\insha\.gradle\caches\transforms-3\bc48492949d405884fb841e24ace82e4\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.8.0] C:\Users\insha\.gradle\caches\transforms-3\375a583d1ea3ef1e574b6b9f579481e9\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:51:9-41
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:51:9-41
+	tools:ignore
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml:10:9-48
+	android:roundIcon
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:53:9-54
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:53:9-54
+	tools:targetApi
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml:9:9-29
+	android:icon
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:52:9-43
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:52:9-43
+	android:allowBackup
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:54:9-36
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:54:9-36
+	android:theme
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:56:9-40
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:56:9-40
+	android:usesCleartextTraffic
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:55:9-44
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:50:9-40
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:50:9-40
+activity#com.ils_videosdk.MainActivity
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:57:9-68:20
+	android:label
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:59:13-45
+	android:launchMode
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:61:13-44
+	android:windowSoftInputMode
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:62:13-55
+	android:exported
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:63:13-36
+	android:configChanges
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:60:13-122
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:58:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:64:13-67:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:65:17-69
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:65:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:66:17-77
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:66:27-74
+meta-data#live.videosdk.rnfgservice.notification_channel_name
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:69:9-72:11
+	android:value
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:71:9-45
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:70:9-75
+meta-data#live.videosdk.rnfgservice.notification_channel_description
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:73:9-76:11
+	android:value
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:75:9-75
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:74:9-82
+meta-data#live.videosdk.rnfgservice.notification_color
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:77:9-80:11
+	android:resource
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:79:9-38
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:78:9-68
+service#live.videosdk.rnfgservice.ForegroundService
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:81:9-135
+	android:foregroundServiceType
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:81:77-124
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:81:18-76
+service#live.videosdk.rnfgservice.ForegroundServiceTask
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:82:9-91
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:82:18-80
+uses-sdk
+INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml
+MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] C:\Users\insha\.gradle\caches\transforms-3\ef55eb2f87a4889b0a36d8fb9e6a9736\transformed\jetified-flipper-network-plugin-0.125.0\AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] C:\Users\insha\.gradle\caches\transforms-3\ef55eb2f87a4889b0a36d8fb9e6a9736\transformed\jetified-flipper-network-plugin-0.125.0\AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\insha\.gradle\caches\transforms-3\d470911846cce8cd9a0422b44d27f400\transformed\jetified-flipper-fresco-plugin-0.125.0\AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\insha\.gradle\caches\transforms-3\d470911846cce8cd9a0422b44d27f400\transformed\jetified-flipper-fresco-plugin-0.125.0\AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\insha\.gradle\caches\transforms-3\a822b96874f1c3116b8bb7f5d234b8b0\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\insha\.gradle\caches\transforms-3\a822b96874f1c3116b8bb7f5d234b8b0\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:11:5-13:41
+MERGED from [:rnfgservice] C:\Users\insha\Downloads\frontend\node_modules\@videosdk.live\react-native-foreground-service\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:rnfgservice] C:\Users\insha\Downloads\frontend\node_modules\@videosdk.live\react-native-foreground-service\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:rnwebrtc] C:\Users\insha\Downloads\frontend\node_modules\@videosdk.live\react-native-webrtc\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:rnwebrtc] C:\Users\insha\Downloads\frontend\node_modules\@videosdk.live\react-native-webrtc\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:rnincallmanager] C:\Users\insha\Downloads\frontend\node_modules\@videosdk.live\react-native-incallmanager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:rnincallmanager] C:\Users\insha\Downloads\frontend\node_modules\@videosdk.live\react-native-incallmanager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-html-to-pdf] C:\Users\insha\Downloads\frontend\node_modules\react-native-html-to-pdf\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-html-to-pdf] C:\Users\insha\Downloads\frontend\node_modules\react-native-html-to-pdf\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-async-storage_async-storage] C:\Users\insha\Downloads\frontend\node_modules\@react-native-async-storage\async-storage\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-async-storage_async-storage] C:\Users\insha\Downloads\frontend\node_modules\@react-native-async-storage\async-storage\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_datetimepicker] C:\Users\insha\Downloads\frontend\node_modules\@react-native-community\datetimepicker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_datetimepicker] C:\Users\insha\Downloads\frontend\node_modules\@react-native-community\datetimepicker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_slider] C:\Users\insha\Downloads\frontend\node_modules\@react-native-community\slider\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_slider] C:\Users\insha\Downloads\frontend\node_modules\@react-native-community\slider\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_viewpager] C:\Users\insha\Downloads\frontend\node_modules\@react-native-community\viewpager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_viewpager] C:\Users\insha\Downloads\frontend\node_modules\@react-native-community\viewpager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-picker_picker] C:\Users\insha\Downloads\frontend\node_modules\@react-native-picker\picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-picker_picker] C:\Users\insha\Downloads\frontend\node_modules\@react-native-picker\picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:videosdk.live_react-native-incallmanager] C:\Users\insha\Downloads\frontend\node_modules\@videosdk.live\react-native-incallmanager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:videosdk.live_react-native-incallmanager] C:\Users\insha\Downloads\frontend\node_modules\@videosdk.live\react-native-incallmanager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:lottie-react-native] C:\Users\insha\Downloads\frontend\node_modules\lottie-react-native\src\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:lottie-react-native] C:\Users\insha\Downloads\frontend\node_modules\lottie-react-native\src\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-document-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-document-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-document-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-document-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-fs] C:\Users\insha\Downloads\frontend\node_modules\react-native-fs\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-fs] C:\Users\insha\Downloads\frontend\node_modules\react-native-fs\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-gesture-handler] C:\Users\insha\Downloads\frontend\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-gesture-handler] C:\Users\insha\Downloads\frontend\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-image-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-image-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-orientation-locker] C:\Users\insha\Downloads\frontend\node_modules\react-native-orientation-locker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-orientation-locker] C:\Users\insha\Downloads\frontend\node_modules\react-native-orientation-locker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-safe-area-context] C:\Users\insha\Downloads\frontend\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-safe-area-context] C:\Users\insha\Downloads\frontend\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-screens] C:\Users\insha\Downloads\frontend\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-screens] C:\Users\insha\Downloads\frontend\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-svg] C:\Users\insha\Downloads\frontend\node_modules\react-native-svg\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-svg] C:\Users\insha\Downloads\frontend\node_modules\react-native-svg\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-vector-icons] C:\Users\insha\Downloads\frontend\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-vector-icons] C:\Users\insha\Downloads\frontend\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-video] C:\Users\insha\Downloads\frontend\node_modules\react-native-video\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-video] C:\Users\insha\Downloads\frontend\node_modules\react-native-video\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-webview] C:\Users\insha\Downloads\frontend\node_modules\react-native-webview\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-webview] C:\Users\insha\Downloads\frontend\node_modules\react-native-webview\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.react:react-android:0.72.7] C:\Users\insha\.gradle\caches\transforms-3\230277fda71ebe88808d0606150f2cc5\transformed\jetified-react-android-0.72.7-debug\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.react:react-android:0.72.7] C:\Users\insha\.gradle\caches\transforms-3\230277fda71ebe88808d0606150f2cc5\transformed\jetified-react-android-0.72.7-debug\AndroidManifest.xml:5:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\45cdbd662cb535685e9714fae2c73db1\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\45cdbd662cb535685e9714fae2c73db1\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.facebook.react:hermes-android:0.72.7] C:\Users\insha\.gradle\caches\transforms-3\202263bbca9af8bdb22cdc672def39c9\transformed\jetified-hermes-android-0.72.7-debug\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.react:hermes-android:0.72.7] C:\Users\insha\.gradle\caches\transforms-3\202263bbca9af8bdb22cdc672def39c9\transformed\jetified-hermes-android-0.72.7-debug\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.fbjni:fbjni:0.3.0] C:\Users\insha\.gradle\caches\transforms-3\2da769d3f5ed9a358d776911b4ad6b60\transformed\jetified-fbjni-0.3.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fbjni:fbjni:0.3.0] C:\Users\insha\.gradle\caches\transforms-3\2da769d3f5ed9a358d776911b4ad6b60\transformed\jetified-fbjni-0.3.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:flipper:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\1325639634097a5a4fef258a4d0ab256\transformed\jetified-flipper-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:flipper:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\1325639634097a5a4fef258a4d0ab256\transformed\jetified-flipper-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:stetho:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\8606095c9317091aecd7f10ff9c62554\transformed\jetified-stetho-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:stetho:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\8606095c9317091aecd7f10ff9c62554\transformed\jetified-stetho-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\e9f6e6fef8deea8e96af67b1df019169\transformed\jetified-fresco-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\e9f6e6fef8deea8e96af67b1df019169\transformed\jetified-fresco-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:soloader:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\65db0b2f3547482a1b8f71a561241ba7\transformed\jetified-soloader-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:soloader:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\65db0b2f3547482a1b8f71a561241ba7\transformed\jetified-soloader-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.5.0] C:\Users\insha\.gradle\caches\transforms-3\3d3a723d1eae089cd425160351cac9e8\transformed\jetified-imagepipeline-okhttp3-2.5.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.5.0] C:\Users\insha\.gradle\caches\transforms-3\3d3a723d1eae089cd425160351cac9e8\transformed\jetified-imagepipeline-okhttp3-2.5.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\ac7f6addae15e46992d4659de0437adc\transformed\jetified-drawee-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\ac7f6addae15e46992d4659de0437adc\transformed\jetified-drawee-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagefilters:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\9aeab8c9da0212cb5953c4bc60cc1006\transformed\jetified-nativeimagefilters-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagefilters:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\9aeab8c9da0212cb5953c4bc60cc1006\transformed\jetified-nativeimagefilters-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:memory-type-native:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\42e53805ba3dc74dffcd9c32f6c5304f\transformed\jetified-memory-type-native-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:memory-type-native:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\42e53805ba3dc74dffcd9c32f6c5304f\transformed\jetified-memory-type-native-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:memory-type-java:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\79abe363c3bfa1de6b52d7208fe27db4\transformed\jetified-memory-type-java-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:memory-type-java:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\79abe363c3bfa1de6b52d7208fe27db4\transformed\jetified-memory-type-java-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-native:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\93adc85cb0f7632c7645e99000f53843\transformed\jetified-imagepipeline-native-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-native:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\93adc85cb0f7632c7645e99000f53843\transformed\jetified-imagepipeline-native-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.10.5] C:\Users\insha\.gradle\caches\transforms-3\54493ab15d47c6fd9af0134919789f5b\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.10.5] C:\Users\insha\.gradle\caches\transforms-3\54493ab15d47c6fd9af0134919789f5b\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.fresco:memory-type-ashmem:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\54681efe32f308e1c65a55f7e86be442\transformed\jetified-memory-type-ashmem-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:memory-type-ashmem:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\54681efe32f308e1c65a55f7e86be442\transformed\jetified-memory-type-ashmem-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\adf5575a1fa67870af322dec09baa30e\transformed\jetified-imagepipeline-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\adf5575a1fa67870af322dec09baa30e\transformed\jetified-imagepipeline-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\93032744383eb834405024927045c86d\transformed\jetified-nativeimagetranscoder-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\93032744383eb834405024927045c86d\transformed\jetified-nativeimagetranscoder-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\bbca947c40bea0cd05210ac99883cbff\transformed\jetified-imagepipeline-base-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\bbca947c40bea0cd05210ac99883cbff\transformed\jetified-imagepipeline-base-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:5.1.1] C:\Users\insha\.gradle\caches\transforms-3\c746350100e58287dde42a45d68d5a5a\transformed\jetified-lottie-5.1.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:5.1.1] C:\Users\insha\.gradle\caches\transforms-3\c746350100e58287dde42a45d68d5a5a\transformed\jetified-lottie-5.1.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.yalantis:ucrop:2.2.6-native] C:\Users\insha\.gradle\caches\transforms-3\13c5600f5553b175db1e6d7f26c67602\transformed\jetified-ucrop-2.2.6-native\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.yalantis:ucrop:2.2.6-native] C:\Users\insha\.gradle\caches\transforms-3\13c5600f5553b175db1e6d7f26c67602\transformed\jetified-ucrop-2.2.6-native\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.material:material:1.9.0] C:\Users\insha\.gradle\caches\transforms-3\8c4f2f8921d919fc66b9228629d82bd1\transformed\material-1.9.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.9.0] C:\Users\insha\.gradle\caches\transforms-3\8c4f2f8921d919fc66b9228629d82bd1\transformed\material-1.9.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.adityaxjha:Android-ScalableVideoView:10e7b4da8b] C:\Users\insha\.gradle\caches\transforms-3\9b08c66b6ed60b9d5de8ee250c2026ca\transformed\jetified-Android-ScalableVideoView-10e7b4da8b\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.adityaxjha:Android-ScalableVideoView:10e7b4da8b] C:\Users\insha\.gradle\caches\transforms-3\9b08c66b6ed60b9d5de8ee250c2026ca\transformed\jetified-Android-ScalableVideoView-10e7b4da8b\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.5.0] C:\Users\insha\.gradle\caches\transforms-3\8f52846204b871412aa2d17e0d132fe4\transformed\jetified-appcompat-resources-1.5.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.5.0] C:\Users\insha\.gradle\caches\transforms-3\8f52846204b871412aa2d17e0d132fe4\transformed\jetified-appcompat-resources-1.5.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\insha\.gradle\caches\transforms-3\c5c161527a9bc6ccd1531712533befcb\transformed\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\insha\.gradle\caches\transforms-3\c5c161527a9bc6ccd1531712533befcb\transformed\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.5.0] C:\Users\insha\.gradle\caches\transforms-3\6e4ea8adcc66f2c31600cebc3be7fb4e\transformed\appcompat-1.5.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.5.0] C:\Users\insha\.gradle\caches\transforms-3\6e4ea8adcc66f2c31600cebc3be7fb4e\transformed\appcompat-1.5.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\insha\.gradle\caches\transforms-3\c4ebd1622afcc720d1b92ea4ae83c8cb\transformed\sqlite-framework-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\insha\.gradle\caches\transforms-3\c4ebd1622afcc720d1b92ea4ae83c8cb\transformed\sqlite-framework-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\2de878c88954c4b4be93cbf1547266ad\transformed\jetified-autofill-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\2de878c88954c4b4be93cbf1547266ad\transformed\jetified-autofill-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\f8a9adcdff93af3957cc452f1ae54eae\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\f8a9adcdff93af3957cc452f1ae54eae\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\insha\.gradle\caches\transforms-3\59c6858098330765d4f3e44a58ff2f9e\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\insha\.gradle\caches\transforms-3\59c6858098330765d4f3e44a58ff2f9e\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.5.0] C:\Users\insha\.gradle\caches\transforms-3\7947bbb373c3399a501ec61f79268ed3\transformed\jetified-activity-1.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.5.0] C:\Users\insha\.gradle\caches\transforms-3\7947bbb373c3399a501ec61f79268ed3\transformed\jetified-activity-1.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\11d6948eccf7917eeca75044ad7fc84d\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\11d6948eccf7917eeca75044ad7fc84d\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\insha\.gradle\caches\transforms-3\b48063148ce9527ff312a788eb659625\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\insha\.gradle\caches\transforms-3\b48063148ce9527ff312a788eb659625\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\insha\.gradle\caches\transforms-3\466a7bf1c7ede8ba794d50ec36633e93\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\insha\.gradle\caches\transforms-3\466a7bf1c7ede8ba794d50ec36633e93\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\18968fbebafb8d81c513f35cb9581721\transformed\jetified-tracing-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\18968fbebafb8d81c513f35cb9581721\transformed\jetified-tracing-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.facebook.fresco:middleware:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\4121d72111b2c56efa9def7761e4673e\transformed\jetified-middleware-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:middleware:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\4121d72111b2c56efa9def7761e4673e\transformed\jetified-middleware-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:ui-common:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\f8a3e78b182b3337ae13e2a4ff45a71e\transformed\jetified-ui-common-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:ui-common:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\f8a3e78b182b3337ae13e2a4ff45a71e\transformed\jetified-ui-common-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\17a783689788f9988376a71b17af81f7\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\17a783689788f9988376a71b17af81f7\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\54644cf3cb58896f30d5493e142d9813\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\54644cf3cb58896f30d5493e142d9813\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\d868ff5b13c1c549a7d4a6d7aabf98b8\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\d868ff5b13c1c549a7d4a6d7aabf98b8\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.0] C:\Users\insha\.gradle\caches\transforms-3\6f6752bdbd569254d17feebf4123ac82\transformed\lifecycle-viewmodel-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.0] C:\Users\insha\.gradle\caches\transforms-3\6f6752bdbd569254d17feebf4123ac82\transformed\lifecycle-viewmodel-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.0] C:\Users\insha\.gradle\caches\transforms-3\6c1b5090171299fe8c5596ac39d99c9f\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.0] C:\Users\insha\.gradle\caches\transforms-3\6c1b5090171299fe8c5596ac39d99c9f\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] C:\Users\insha\.gradle\caches\transforms-3\90fab65a993fe3c4b41fc5bc8993d114\transformed\exifinterface-1.3.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] C:\Users\insha\.gradle\caches\transforms-3\90fab65a993fe3c4b41fc5bc8993d114\transformed\exifinterface-1.3.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.8.0] C:\Users\insha\.gradle\caches\transforms-3\32ce586b0c573b066064c6cfa81b9e02\transformed\jetified-core-ktx-1.8.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.8.0] C:\Users\insha\.gradle\caches\transforms-3\32ce586b0c573b066064c6cfa81b9e02\transformed\jetified-core-ktx-1.8.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b5de9b2fd7b5af3a4e74556c38bb2121\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b5de9b2fd7b5af3a4e74556c38bb2121\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.webkit:webkit:1.4.0] C:\Users\insha\.gradle\caches\transforms-3\4d2167c7d887f164f0918e03611b6ae8\transformed\webkit-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.webkit:webkit:1.4.0] C:\Users\insha\.gradle\caches\transforms-3\4d2167c7d887f164f0918e03611b6ae8\transformed\webkit-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\insha\.gradle\caches\transforms-3\38d209462a6436b7856381ab646a9b43\transformed\sqlite-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\insha\.gradle\caches\transforms-3\38d209462a6436b7856381ab646a9b43\transformed\sqlite-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\c2e0fb64b89d4f18f372bd5e42b04e81\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\c2e0fb64b89d4f18f372bd5e42b04e81\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\58654e32b23fae838eed3673c0014754\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\58654e32b23fae838eed3673c0014754\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\112a43cdf5a959f1f37c1dfa57e79a2f\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\112a43cdf5a959f1f37c1dfa57e79a2f\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\abfa5be8dceab98024915c7993d23fc7\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\abfa5be8dceab98024915c7993d23fc7\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\insha\.gradle\caches\transforms-3\9acd1dede48963343434185cf7df2e59\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\insha\.gradle\caches\transforms-3\9acd1dede48963343434185cf7df2e59\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\e7aa87b69c4f24cc5b61935107039bf3\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\e7aa87b69c4f24cc5b61935107039bf3\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\0eb267e37b44fc36985bc8496cd4ad6e\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\0eb267e37b44fc36985bc8496cd4ad6e\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.8.0] C:\Users\insha\.gradle\caches\transforms-3\375a583d1ea3ef1e574b6b9f579481e9\transformed\core-1.8.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.8.0] C:\Users\insha\.gradle\caches\transforms-3\375a583d1ea3ef1e574b6b9f579481e9\transformed\core-1.8.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\insha\.gradle\caches\transforms-3\bc48492949d405884fb841e24ace82e4\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\insha\.gradle\caches\transforms-3\bc48492949d405884fb841e24ace82e4\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\6b90aa6ba64a3ff265f1fe1ab5ccb32e\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\6b90aa6ba64a3ff265f1fe1ab5ccb32e\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\6964837811bd213ca8c61721694dde3e\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\6964837811bd213ca8c61721694dde3e\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\4ba77d580e9aaad3c228fcf3bf55c7f9\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\4ba77d580e9aaad3c228fcf3bf55c7f9\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.0] C:\Users\insha\.gradle\caches\transforms-3\760227ca3919959c654a6f684c51b975\transformed\lifecycle-runtime-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.0] C:\Users\insha\.gradle\caches\transforms-3\760227ca3919959c654a6f684c51b975\transformed\lifecycle-runtime-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\1596282e77d26d05d2fc566c1ed94348\transformed\jetified-savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\1596282e77d26d05d2fc566c1ed94348\transformed\jetified-savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\insha\.gradle\caches\transforms-3\e98b4c4894cd31f69c5c8c2f130621ed\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\insha\.gradle\caches\transforms-3\e98b4c4894cd31f69c5c8c2f130621ed\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.0] C:\Users\insha\.gradle\caches\transforms-3\671fff26791ac6bb9e012ee19a0d5018\transformed\lifecycle-livedata-core-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.0] C:\Users\insha\.gradle\caches\transforms-3\671fff26791ac6bb9e012ee19a0d5018\transformed\lifecycle-livedata-core-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\insha\.gradle\caches\transforms-3\472921ffce6f4a0c29ea0e650e15775f\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\insha\.gradle\caches\transforms-3\472921ffce6f4a0c29ea0e650e15775f\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\958a1f6d235171410bc48032ca703591\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\958a1f6d235171410bc48032ca703591\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\c6d31442d00ce59d58f1c2b2141a22ed\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\c6d31442d00ce59d58f1c2b2141a22ed\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\09d372ee2b25fac13630213197d239c7\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\insha\.gradle\caches\transforms-3\09d372ee2b25fac13630213197d239c7\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.tom-roush:pdfbox-android:1.8.10.3] C:\Users\insha\.gradle\caches\transforms-3\5da8c6dec92c3ec7d50437a7fc4e1932\transformed\jetified-pdfbox-android-1.8.10.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.tom-roush:pdfbox-android:1.8.10.3] C:\Users\insha\.gradle\caches\transforms-3\5da8c6dec92c3ec7d50437a7fc4e1932\transformed\jetified-pdfbox-android-1.8.10.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.fresco:fbcore:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\c0bc4557ef8f9e1e4d05eecd7170718f\transformed\jetified-fbcore-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:2.6.0] C:\Users\insha\.gradle\caches\transforms-3\c0bc4557ef8f9e1e4d05eecd7170718f\transformed\jetified-fbcore-2.6.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\3abf82016b48ea0555b2487825224657\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\insha\.gradle\caches\transforms-3\3abf82016b48ea0555b2487825224657\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
+INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml
+INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml:11:9-111
+	android:exported
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml:11:84-108
+	android:name
+		ADDED from C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml:11:19-83
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from [com.facebook.flipper:flipper:0.125.0] C:\Users\insha\.gradle\caches\transforms-3\a822b96874f1c3116b8bb7f5d234b8b0\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:5-76
+	android:name
+		ADDED from [com.facebook.flipper:flipper:0.125.0] C:\Users\insha\.gradle\caches\transforms-3\a822b96874f1c3116b8bb7f5d234b8b0\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:22-73
+provider#com.vinzscam.reactnativefileviewer.FileProvider
+ADDED from [:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+	android:grantUriPermissions
+		ADDED from [:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
+	android:authorities
+		ADDED from [:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-60
+	android:exported
+		ADDED from [:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+	android:name
+		ADDED from [:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-75
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:70
+	android:resource
+		ADDED from [:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-67
+	android:name
+		ADDED from [:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+intent#action:name:android.media.action.IMAGE_CAPTURE
+ADDED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-12:18
+action#android.media.action.IMAGE_CAPTURE
+ADDED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-73
+	android:name
+		ADDED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:21-70
+provider#com.reactnative.ivpusic.imagepicker.IvpusicImagePickerFileProvider
+ADDED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:9-26:20
+	android:grantUriPermissions
+		ADDED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-47
+	android:authorities
+		ADDED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-60
+	android:exported
+		ADDED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-94
+activity#com.yalantis.ucrop.UCropActivity
+ADDED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:28:9-30:72
+	android:theme
+		ADDED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:30:13-69
+	android:name
+		ADDED from [:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:29:13-60
+provider#com.imagepicker.ImagePickerProvider
+ADDED from [:react-native-image-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+	android:grantUriPermissions
+		ADDED from [:react-native-image-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
+	android:authorities
+		ADDED from [:react-native-image-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-71
+	android:exported
+		ADDED from [:react-native-image-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+	android:name
+		ADDED from [:react-native-image-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-63
+provider#com.reactnativecommunity.webview.RNCWebViewFileProvider
+ADDED from [:react-native-webview] C:\Users\insha\Downloads\frontend\node_modules\react-native-webview\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+	android:grantUriPermissions
+		ADDED from [:react-native-webview] C:\Users\insha\Downloads\frontend\node_modules\react-native-webview\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
+	android:authorities
+		ADDED from [:react-native-webview] C:\Users\insha\Downloads\frontend\node_modules\react-native-webview\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-64
+	android:exported
+		ADDED from [:react-native-webview] C:\Users\insha\Downloads\frontend\node_modules\react-native-webview\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+	android:name
+		ADDED from [:react-native-webview] C:\Users\insha\Downloads\frontend\node_modules\react-native-webview\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-83
+meta-data#com.facebook.soloader.enabled
+ADDED from [com.facebook.soloader:soloader:0.10.5] C:\Users\insha\.gradle\caches\transforms-3\54493ab15d47c6fd9af0134919789f5b\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:12:9-14:37
+	android:value
+		ADDED from [com.facebook.soloader:soloader:0.10.5] C:\Users\insha\.gradle\caches\transforms-3\54493ab15d47c6fd9af0134919789f5b\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:14:13-34
+	android:name
+		ADDED from [com.facebook.soloader:soloader:0.10.5] C:\Users\insha\.gradle\caches\transforms-3\54493ab15d47c6fd9af0134919789f5b\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:13:13-57
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\insha\.gradle\caches\transforms-3\b48063148ce9527ff312a788eb659625\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\insha\.gradle\caches\transforms-3\b48063148ce9527ff312a788eb659625\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\insha\.gradle\caches\transforms-3\466a7bf1c7ede8ba794d50ec36633e93\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\insha\.gradle\caches\transforms-3\466a7bf1c7ede8ba794d50ec36633e93\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\insha\.gradle\caches\transforms-3\b48063148ce9527ff312a788eb659625\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\insha\.gradle\caches\transforms-3\b48063148ce9527ff312a788eb659625\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\insha\.gradle\caches\transforms-3\b48063148ce9527ff312a788eb659625\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78

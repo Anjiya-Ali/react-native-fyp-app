@@ -1,0 +1,304 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.ils_videosdk"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+9        android:targetSdkVersion="33" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:19:5-78
+11-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:19:22-75
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:4:5-67
+12-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:4:22-64
+13    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+13-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:5:5-80
+13-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:5:22-78
+14    <uses-permission
+14-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:6:5-8:38
+15        android:name="android.permission.BLUETOOTH"
+15-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:7:9-52
+16        android:maxSdkVersion="30" />
+16-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:8:9-35
+17    <uses-permission
+17-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:9:5-11:38
+18        android:name="android.permission.BLUETOOTH_ADMIN"
+18-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:10:9-58
+19        android:maxSdkVersion="30" /> <!-- Needed to communicate with already-paired Bluetooth devices. (Android 12 upwards) -->
+19-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:11:9-35
+20    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+20-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:14:5-76
+20-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:14:22-73
+21    <uses-permission android:name="android.permission.CAMERA" />
+21-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:16:5-65
+21-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:16:22-62
+22    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+22-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:17:5-80
+22-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:17:22-77
+23    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+23-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:18:5-71
+23-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:18:22-68
+24    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+24-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:20:5-76
+24-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:20:22-74
+25    <uses-permission android:name="android.permission.WAKE_LOCK" />
+25-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:21:5-68
+25-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:21:22-65
+26
+27    <uses-feature android:name="android.hardware.camera" />
+27-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:22:5-60
+27-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:22:19-57
+28    <uses-feature android:name="android.hardware.camera.autofocus" />
+28-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:23:5-70
+28-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:23:19-67
+29
+30    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+30-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:18:5-71
+30-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:18:22-68
+31    <uses-permission android:name="android.permission.INTERNET" />
+31-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:4:5-67
+31-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:4:22-64
+32    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+32-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:26:5-75
+32-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:26:22-72
+33    <uses-permission android:name="android.permission.CAMERA" />
+33-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:16:5-65
+33-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:16:22-62
+34    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+34-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:28:5-79
+34-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:28:22-76
+35    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" /> <!-- Needed to communicate with already-paired Bluetooth devices. (Legacy up to Android 11) -->
+35-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:29:5-79
+35-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:29:22-76
+36    <uses-permission
+36-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:6:5-8:38
+37        android:name="android.permission.BLUETOOTH"
+37-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:7:9-52
+38        android:maxSdkVersion="30" />
+38-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:8:9-35
+39    <uses-permission
+39-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:9:5-11:38
+40        android:name="android.permission.BLUETOOTH_ADMIN"
+40-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:10:9-58
+41        android:maxSdkVersion="30" /> <!-- Needed to communicate with already-paired Bluetooth devices. (Android 12 upwards) -->
+41-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:11:9-35
+42    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+42-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:14:5-76
+42-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:14:22-73
+43
+44    <queries>
+44-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:42:5-47:15
+45        <intent>
+45-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:43:9-46:18
+46            <action android:name="android.intent.action.VIEW" />
+46-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:44:13-65
+46-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:44:21-62
+47
+48            <data android:mimeType="application/pdf" />
+48-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:45:13-56
+48-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:45:19-53
+49        </intent>
+50        <intent>
+50-->[:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-12:18
+51            <action android:name="android.media.action.IMAGE_CAPTURE" />
+51-->[:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-73
+51-->[:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:21-70
+52        </intent>
+53    </queries>
+54
+55    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+55-->[com.facebook.flipper:flipper:0.125.0] C:\Users\insha\.gradle\caches\transforms-3\a822b96874f1c3116b8bb7f5d234b8b0\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:5-76
+55-->[com.facebook.flipper:flipper:0.125.0] C:\Users\insha\.gradle\caches\transforms-3\a822b96874f1c3116b8bb7f5d234b8b0\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:22-73
+56
+57    <application
+57-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:49:5-83:19
+58        android:name="com.ils_videosdk.MainApplication"
+58-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:50:9-40
+59        android:allowBackup="false"
+59-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:54:9-36
+60        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+60-->[androidx.core:core:1.8.0] C:\Users\insha\.gradle\caches\transforms-3\375a583d1ea3ef1e574b6b9f579481e9\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
+61        android:debuggable="true"
+62        android:extractNativeLibs="false"
+63        android:icon="@mipmap/ic_launcher"
+63-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:52:9-43
+64        android:label="@string/app_name"
+64-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:51:9-41
+65        android:roundIcon="@mipmap/ic_launcher_round"
+65-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:53:9-54
+66        android:theme="@style/AppTheme"
+66-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:56:9-40
+67        android:usesCleartextTraffic="true" >
+67-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:55:9-44
+68        <activity
+68-->C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml:11:9-111
+69            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+69-->C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml:11:19-83
+70            android:exported="false" />
+70-->C:\Users\insha\Downloads\frontend\android\app\src\debug\AndroidManifest.xml:11:84-108
+71        <activity
+71-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:57:9-68:20
+72            android:name="com.ils_videosdk.MainActivity"
+72-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:58:13-41
+73            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+73-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:60:13-122
+74            android:exported="true"
+74-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:63:13-36
+75            android:label="@string/app_name"
+75-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:59:13-45
+76            android:launchMode="singleTask"
+76-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:61:13-44
+77            android:windowSoftInputMode="adjustResize" >
+77-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:62:13-55
+78            <intent-filter>
+78-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:64:13-67:29
+79                <action android:name="android.intent.action.MAIN" />
+79-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:65:17-69
+79-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:65:25-66
+80
+81                <category android:name="android.intent.category.LAUNCHER" />
+81-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:66:17-77
+81-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:66:27-74
+82            </intent-filter>
+83        </activity>
+84
+85        <meta-data
+85-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:69:9-72:11
+86            android:name="live.videosdk.rnfgservice.notification_channel_name"
+86-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:70:9-75
+87            android:value="Meeting Notification" />
+87-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:71:9-45
+88        <meta-data
+88-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:73:9-76:11
+89            android:name="live.videosdk.rnfgservice.notification_channel_description"
+89-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:74:9-82
+90            android:value="Whenever meeting started notification will appear." />
+90-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:75:9-75
+91        <meta-data
+91-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:77:9-80:11
+92            android:name="live.videosdk.rnfgservice.notification_color"
+92-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:78:9-68
+93            android:resource="@color/red" />
+93-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:79:9-38
+94
+95        <service
+95-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:81:9-135
+96            android:name="live.videosdk.rnfgservice.ForegroundService"
+96-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:81:18-76
+97            android:foregroundServiceType="mediaProjection" />
+97-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:81:77-124
+98        <service android:name="live.videosdk.rnfgservice.ForegroundServiceTask" />
+98-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:82:9-91
+98-->C:\Users\insha\Downloads\frontend\android\app\src\main\AndroidManifest.xml:82:18-80
+99
+100        <provider
+100-->[:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+101            android:name="com.vinzscam.reactnativefileviewer.FileProvider"
+101-->[:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-75
+102            android:authorities="com.ils_videosdk.provider"
+102-->[:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-60
+103            android:exported="false"
+103-->[:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+104            android:grantUriPermissions="true" >
+104-->[:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
+105            <meta-data
+105-->[:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:70
+106                android:name="android.support.FILE_PROVIDER_PATHS"
+106-->[:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+107                android:resource="@xml/file_viewer_provider_paths" />
+107-->[:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-67
+108        </provider>
+109        <provider
+109-->[:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:9-26:20
+110            android:name="com.reactnative.ivpusic.imagepicker.IvpusicImagePickerFileProvider"
+110-->[:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-94
+111            android:authorities="com.ils_videosdk.provider"
+111-->[:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-60
+112            android:exported="false"
+112-->[:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:21:13-37
+113            android:grantUriPermissions="true" >
+113-->[:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-47
+114            <meta-data
+114-->[:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:70
+115                android:name="android.support.FILE_PROVIDER_PATHS"
+115-->[:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+116                android:resource="@xml/ivpusic_imagepicker_provider_paths" />
+116-->[:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-67
+117        </provider>
+118
+119        <activity
+119-->[:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:28:9-30:72
+120            android:name="com.yalantis.ucrop.UCropActivity"
+120-->[:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:29:13-60
+121            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+121-->[:react-native-image-crop-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-crop-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:30:13-69
+122
+123        <provider
+123-->[:react-native-image-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+124            android:name="com.imagepicker.ImagePickerProvider"
+124-->[:react-native-image-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-63
+125            android:authorities="com.ils_videosdk.imagepickerprovider"
+125-->[:react-native-image-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-71
+126            android:exported="false"
+126-->[:react-native-image-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+127            android:grantUriPermissions="true" >
+127-->[:react-native-image-picker] C:\Users\insha\Downloads\frontend\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
+128            <meta-data
+128-->[:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:70
+129                android:name="android.support.FILE_PROVIDER_PATHS"
+129-->[:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+130                android:resource="@xml/imagepicker_provider_paths" />
+130-->[:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-67
+131        </provider>
+132        <provider
+132-->[:react-native-webview] C:\Users\insha\Downloads\frontend\node_modules\react-native-webview\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+133            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
+133-->[:react-native-webview] C:\Users\insha\Downloads\frontend\node_modules\react-native-webview\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-83
+134            android:authorities="com.ils_videosdk.fileprovider"
+134-->[:react-native-webview] C:\Users\insha\Downloads\frontend\node_modules\react-native-webview\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-64
+135            android:exported="false"
+135-->[:react-native-webview] C:\Users\insha\Downloads\frontend\node_modules\react-native-webview\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+136            android:grantUriPermissions="true" >
+136-->[:react-native-webview] C:\Users\insha\Downloads\frontend\node_modules\react-native-webview\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
+137            <meta-data
+137-->[:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:70
+138                android:name="android.support.FILE_PROVIDER_PATHS"
+138-->[:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+139                android:resource="@xml/file_provider_paths" />
+139-->[:react-native-file-viewer] C:\Users\insha\Downloads\frontend\node_modules\react-native-file-viewer\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-67
+140        </provider>
+141
+142        <meta-data
+142-->[com.facebook.soloader:soloader:0.10.5] C:\Users\insha\.gradle\caches\transforms-3\54493ab15d47c6fd9af0134919789f5b\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:12:9-14:37
+143            android:name="com.facebook.soloader.enabled"
+143-->[com.facebook.soloader:soloader:0.10.5] C:\Users\insha\.gradle\caches\transforms-3\54493ab15d47c6fd9af0134919789f5b\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:13:13-57
+144            android:value="false" />
+144-->[com.facebook.soloader:soloader:0.10.5] C:\Users\insha\.gradle\caches\transforms-3\54493ab15d47c6fd9af0134919789f5b\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:14:13-34
+145
+146        <provider
+146-->[androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+147            android:name="androidx.startup.InitializationProvider"
+147-->[androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+148            android:authorities="com.ils_videosdk.androidx-startup"
+148-->[androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+149            android:exported="false" >
+149-->[androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+150            <meta-data
+150-->[androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+151                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+151-->[androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+152                android:value="androidx.startup" />
+152-->[androidx.emoji2:emoji2:1.2.0] C:\Users\insha\.gradle\caches\transforms-3\b2471018413d2182ed2c5bb3065c50d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+153            <meta-data
+153-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\insha\.gradle\caches\transforms-3\b48063148ce9527ff312a788eb659625\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+154                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+154-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\insha\.gradle\caches\transforms-3\b48063148ce9527ff312a788eb659625\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+155                android:value="androidx.startup" />
+155-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\insha\.gradle\caches\transforms-3\b48063148ce9527ff312a788eb659625\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+156        </provider>
+157    </application>
+158
+159</manifest>
