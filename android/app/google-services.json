@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "21430541749",
+    "project_id": "push-notification-177f8",
+    "storage_bucket": "push-notification-177f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:21430541749:android:7a57686b8feb99e6c78dfc",
+        "android_client_info": {
+          "package_name": "com.ils_videosdk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD5AEcV2cfAvITplSXYYCxpy7fPVyNBHY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
