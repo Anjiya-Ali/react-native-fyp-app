@@ -21,7 +21,7 @@ import TopicRequestContext from "../context/TopicRequest/TopicRequestContext";
 import StarRating from "../components/StarRating";
 import { useFocusEffect } from "@react-navigation/native";
 
-const host = "http://192.168.0.147:3000";
+const host = "http://helloworld-nodejs-4714.azurewebsites.net";
 
 const windowWidth = Dimensions.get("window").width;
 const { height, width } = Dimensions.get("window");
@@ -62,7 +62,7 @@ const TeacherHomePage = () => {
   const [profilePictureUrl, setProfilePictureUrl] = useState("");
   const [topicRequest, setTopicRequest] = useState([]);
   const [communities, setCommunities] = useState([]);
-  const host = "http://192.168.0.147:3000";
+  const host = "http://helloworld-nodejs-4714.azurewebsites.net";
   const [filteredOrganizations, setFilteredOrganizations] = useState([
     {
       _id: 1,
@@ -74,19 +74,13 @@ const TeacherHomePage = () => {
       _id: 2,
       name: "Administrative Tools",
       url: require("../assets/administrativetool.png"),
-      screen: "TeacherHomePage",
-    },
-    {
-      _id: 3,
-      name: "My Courses",
-      url: require("../assets/icons8course50-1-11.png"),
-      screen: "TeacherHomePage",
+      screen: "AdministrativeTools",
     },
     {
       _id: 4,
       name: "My Chats",
       url: require("../assets/icons8chats24-21.png"),
-      screen: "TeacherHomePage",
+      screen: "ConversationsWithMessages",
     },
     {
       _id: 5,
@@ -152,7 +146,7 @@ const TeacherHomePage = () => {
       _id: 15,
       name: "Notifications",
       url: require("../assets/icons8notifications64-1.png"),
-      screen: "TeacherHomePage",
+      screen: "Notifications",
     },
     {
       _id: 16,

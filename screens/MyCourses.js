@@ -13,7 +13,7 @@ const MyCourses = (props) => {
   const { getCourseCompletion, percentage } = useContext(CourseContext);
   const [myCourses, setMyCourses] = useState(null);
   const navigation = useNavigation();
-  const host = 'http://192.168.0.147:3000';
+  const host = 'http://helloworld-nodejs-4714.azurewebsites.net';
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -55,55 +55,57 @@ const MyCourses = (props) => {
     );
   }
   return (
-    <ScrollView style={{ flex: 1, flexDirection: 'column' }} refreshControl={
-      <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-    }>
+    <>
       <Header
-          heading='MY COURSES'
-          navigate="HomePage1"
+            heading='MY COURSES'
+            navigate="HomePage1"
       />
-      <View style={styles.parent}>
-        {myCourses.map((course) => {
-          getCourseCompletion(course._id);
-          return (
-            <View key={course._id} style={styles.box}>
-              <TouchableOpacity
-                key={course._id}
-                style={styles.agile}
-                onPress={() => navigation.navigate("SingleCourse", { courseId: course._id })}
-              >
-                <View style={styles.courseDetails}>
-                  <View style={styles.image1Icon}>
-                    <Image
-                      style={styles.childIconLayout}
-                      resizeMode="cover"
-                      source={{ uri: `${host}/${course.featured_image}` }}
-                    />
-                  </View>
-                  <View style={styles.headPosition}>
-                    <Text style={[styles.excelInAgile, styles.excelInAgileTypo]}>
-                      {course.title}
-                    </Text>
-                    <View style={styles.progressIcon}>
-                      <ProgressCircle
-                        percent={Math.round(percentage)}
-                        radius={25}
-                        borderWidth={8}
-                        color="#373eb2"
-                        shadowColor="#8e8e93"
-                        bgColor="#fff"
-                      >
-                        <Text style={{ fontSize: 13 }}>{`${Math.round(percentage)}%`}</Text>
-                      </ProgressCircle>
+      <ScrollView style={{ flex: 1, flexDirection: 'column' }} refreshControl={
+        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+      }>
+        <View style={styles.parent}>
+          {myCourses.map((course) => {
+            getCourseCompletion(course._id);
+            return (
+              <View key={course._id} style={styles.box}>
+                <TouchableOpacity
+                  key={course._id}
+                  style={styles.agile}
+                  onPress={() => navigation.navigate("SingleCourse", { courseId: course._id })}
+                >
+                  <View style={styles.courseDetails}>
+                    <View style={styles.image1Icon}>
+                      <Image
+                        style={styles.childIconLayout}
+                        resizeMode="cover"
+                        source={{ uri: `${host}/${course.featured_image}` }}
+                      />
+                    </View>
+                    <View style={styles.headPosition}>
+                      <Text style={[styles.excelInAgile, styles.excelInAgileTypo]}>
+                        {course.title}
+                      </Text>
+                      <View style={styles.progressIcon}>
+                        <ProgressCircle
+                          percent={Math.round(percentage)}
+                          radius={25}
+                          borderWidth={8}
+                          color="#373eb2"
+                          shadowColor="#8e8e93"
+                          bgColor="#fff"
+                        >
+                          <Text style={{ fontSize: 13 }}>{`${Math.round(percentage)}%`}</Text>
+                        </ProgressCircle>
+                      </View>
                     </View>
                   </View>
-                </View>
-              </TouchableOpacity>
-            </View>
-          );
-        })}
-      </View>
-    </ScrollView>
+                </TouchableOpacity>
+              </View>
+            );
+          })}
+        </View>
+      </ScrollView>
+    </>
   );
 };
 

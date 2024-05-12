@@ -8,7 +8,7 @@ import TeacherProfileContext from "../context/TeacherProfile/teacherProfileConte
 import Menu from "./Menu";
 import { isNonNullExpression } from "typescript";
 
-const host = "http://192.168.0.147:3000";
+const host = "http://helloworld-nodejs-4714.azurewebsites.net";
 
 const Header = ({ heading, navigate = null, flag = true, data={} }) => {
   const navigation = useNavigation();
@@ -31,7 +31,7 @@ const Header = ({ heading, navigate = null, flag = true, data={} }) => {
       _id: 3,
       name: "My Chats",
       url: require("../assets/icons8chats24-21.png"),
-      screen: "HomePage1",
+      screen: "ConversationsWithMessages",
     },
     {
       _id: 4,
@@ -97,7 +97,7 @@ const Header = ({ heading, navigate = null, flag = true, data={} }) => {
       _id: 14,
       name: "Notifications",
       url: require("../assets/icons8notifications64-1.png"),
-      screen: "HomePage1",
+      screen: "Notifications",
     },
     {
       _id: 15,
@@ -131,19 +131,13 @@ const Header = ({ heading, navigate = null, flag = true, data={} }) => {
         _id: 2,
         name: "Administrative Tools",
         url: require("../assets/administrativetool.png"),
-        screen: "TeacherHomePage",
-      },
-      {
-        _id: 3,
-        name: "My Courses",
-        url: require("../assets/icons8course50-1-11.png"),
-        screen: "TeacherHomePage",
+        screen: "TeacherAdminTools",
       },
       {
         _id: 4,
         name: "My Chats",
         url: require("../assets/icons8chats24-21.png"),
-        screen: "TeacherHomePage",
+        screen: "ConversationsWithMessages",
       },
       {
         _id: 5,
@@ -209,7 +203,7 @@ const Header = ({ heading, navigate = null, flag = true, data={} }) => {
         _id: 15,
         name: "Notifications",
         url: require("../assets/icons8notifications64-1.png"),
-        screen: "TeacherHomePage",
+        screen: "Notifications",
       },
       {
         _id: 16,
@@ -259,7 +253,7 @@ const Header = ({ heading, navigate = null, flag = true, data={} }) => {
       const role = await AsyncStorage.getItem("role");
       setRole(role);
       if(role === "Admin"){
-        setAdminProfilePictureUrl('http://192.168.0.147:3000/Uploads/ProfilePictures/Logo2.png')
+        setAdminProfilePictureUrl('http://helloworld-nodejs-4714.azurewebsites.net/Uploads/ProfilePictures/Logo2.png')
       }
       else{
         const response = await getProfilePicture();

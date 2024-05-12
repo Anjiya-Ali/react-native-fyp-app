@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const CourseState = (props) => {
-  const host = "http://192.168.0.147:3000"
+  const host = "http://helloworld-nodejs-4714.azurewebsites.net"
   const [course, setCourse] = useState(null)
   const [user, setUser] = useState(null)
   const [myCourses, setMyCourses] = useState(null);
@@ -679,8 +679,30 @@ const CourseState = (props) => {
     return json;
   }
 
+  const GetRecommendedCourses = async () => {
+    try{
+      const token = await AsyncStorage.getItem('tokenn');
+      const response = await fetch("https://venv-one-snowy.vercel.app/api/GetRecommendedCourses", {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          "auth-token": token
+        },
+      });
+      if (!response.ok) {
+        console.error('Error getting recommended courses for students:', response.status);
+        return;
+      }
+      const json = await response.json()
+      return json;
+    }
+    catch (error) {
+      console.error('Error getting recommended courses for students:', error.message);
+    }
+  }
+
   return (
-    <CourseContext.Provider value={{ myCourses, addQuiz, addTopic, createLesson, updateAnswerApi, createCourse, updateCourse, getQuizQuuestions, createAnswer, deleteAnswer, updateQuestionApi, createQuestion, deleteQuestion, updateTopic, updateQuiz, createQuiz, deleteQuiz, updateQuizStatus, getTeacherQuizzes, createTopic, deleteTopic, updateTopicStatus, getTeacherTopics, updateCourseStatus, getTeacherCourses, deleteCourse, payCourse, getMyCourses, getCourseCompletion, percentage, allCourses, getCourses, course, getSingleCourse, getUser, user, addCourseRating, addTopicInProgress, updateQuizGraduation, addQuizInProgress, getOrderCourseStatus, orderCourseStatus, setCourse, getLessonsOfCourse, lessonsOfCourse, getLessonItems, markTopicCompleted, getQuizQuestions, getCerificateDetails }}>
+    <CourseContext.Provider value={{ GetRecommendedCourses, myCourses, addQuiz, addTopic, createLesson, updateAnswerApi, createCourse, updateCourse, getQuizQuuestions, createAnswer, deleteAnswer, updateQuestionApi, createQuestion, deleteQuestion, updateTopic, updateQuiz, createQuiz, deleteQuiz, updateQuizStatus, getTeacherQuizzes, createTopic, deleteTopic, updateTopicStatus, getTeacherTopics, updateCourseStatus, getTeacherCourses, deleteCourse, payCourse, getMyCourses, getCourseCompletion, percentage, allCourses, getCourses, course, getSingleCourse, getUser, user, addCourseRating, addTopicInProgress, updateQuizGraduation, addQuizInProgress, getOrderCourseStatus, orderCourseStatus, setCourse, getLessonsOfCourse, lessonsOfCourse, getLessonItems, markTopicCompleted, getQuizQuestions, getCerificateDetails }}>
       {props.children}
     </CourseContext.Provider>
   )

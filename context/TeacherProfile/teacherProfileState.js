@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const teacherProfileState = (props) => {
-    const host = "http://192.168.0.147:3000"
+    const host = "http://helloworld-nodejs-4714.azurewebsites.net"
     const userProfileInitial = []
     const [teacherProfile, setTeacherProfile] = useState(userProfileInitial)
     const [otherUserProfile, setOtherUserProfile] = useState(userProfileInitial)

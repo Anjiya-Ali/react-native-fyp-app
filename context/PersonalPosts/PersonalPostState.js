@@ -4,7 +4,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNewsFeed } from '../NewsFeed/NewsFeedState';
 
 const PersonalPostState = (props) => {
-  const host = "http://192.168.0.147:3000";
+  const host = "http://helloworld-nodejs-4714.azurewebsites.net";
 
   const [allPosts, setAllPosts] = useState([]);
   const [message, setMessage] = useState(null);

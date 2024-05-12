@@ -67,7 +67,7 @@ const MyCommentState = (props) => {
 
     return false; // Comment was not found
   };
-  const host = "http://192.168.0.147:3000";
+  const host = "http://helloworld-nodejs-4714.azurewebsites.net";
   const [communityComments, setAllCommunityComments] = useState(null);
   const [createdComment, setCreatedComment] = useState(null);
   const [repliedComment, setRepliedComment] = useState(null);

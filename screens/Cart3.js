@@ -11,7 +11,7 @@ const BuyCourseCart = () => {
   const context = useContext(CourseContext);
   const { cart, removeFromCart } = cartContext;
   const { getSingleCourse, course, user, getUser, payCourse } = context;
-  const host = 'http://192.168.0.147:3000';
+  const host = 'http://helloworld-nodejs-4714.azurewebsites.net';
   const [courseDetails, setCourseDetails] = useState(null);
   const [total, setTotal] = useState(0);
   const [instructors, setInstructors] = useState([]);

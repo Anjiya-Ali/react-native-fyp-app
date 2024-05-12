@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const TopicRequestState = (props) => {
-    const host = "http://192.168.0.147:3000"
+    const host = "http://helloworld-nodejs-4714.azurewebsites.net"
     const userProfileInitial = []
     // const [userProfile, setUserProfile] = useState(userProfileInitial)
 
@@ -537,7 +537,7 @@ const TopicRequestState = (props) => {
       const GetRecommendedTeacherTopicRequest = async () => {
         try{
           const token = await AsyncStorage.getItem('tokenn');
-          const response = await fetch("http://192.168.0.147:5000/api/GetRecommendedTeacherTopicRequest", {
+          const response = await fetch("https://venv-one-snowy.vercel.app/api/GetRecommendedTeacherTopicRequest", {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',

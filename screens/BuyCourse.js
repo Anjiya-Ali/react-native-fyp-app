@@ -14,7 +14,7 @@ const BuyCourse = (props) => {
   const { getSingleCourse, course, user, getUser, getOrderCourseStatus, orderCourseStatus } = context;
   const [singlecourse, setSingleCourse] = useState(null);
   const { addToCart } = cartContext;
-  const host = 'http://192.168.0.147:3000';
+  const host = 'http://helloworld-nodejs-4714.azurewebsites.net';
   const [formattedDate, setDate] = useState('')
   const [instructor, setInstructor] = useState('')
   const [cartText, setCartText] = useState('')

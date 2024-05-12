@@ -23,7 +23,7 @@ import {
 } from "victory-native";
 import Menu from "../components/Menu";
 
-const host = "http://192.168.0.147:3000";
+const host = "http://helloworld-nodejs-4714.azurewebsites.net";
 
 const AdminHomePage = () => {
   const navigation = useNavigation();
@@ -67,7 +67,7 @@ const AdminHomePage = () => {
   const course_context = useContext(CourseContext);
   const { getUser } = course_context;
   const [profilePictureUrl, setProfilePictureUrl] = useState(
-    "http://192.168.0.147:3000/Uploads/ProfilePictures/Logo2.png"
+    "http://helloworld-nodejs-4714.azurewebsites.net/Uploads/ProfilePictures/Logo2.png"
   );
   const [users, setUsers] = useState([]);
   const [revenue, setRevenue] = useState([]);

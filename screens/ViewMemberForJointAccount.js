@@ -48,6 +48,7 @@ const ViewMemberForJointAccount = ({ route }) => {
     }, [])
   );
 
+
   const [refreshing, setRefreshing] = useState(false);
 
   const onRefresh = useCallback(async () => {
@@ -83,7 +84,7 @@ const ViewMemberForJointAccount = ({ route }) => {
   const navigation = useNavigation();
 
   const flexD = "column";
-  const host = "http://192.168.0.147:3000";
+  const host = "http://helloworld-nodejs-4714.azurewebsites.net";
 
   const handleInviteConnection = async (connectionId, name) => {
     navigation.navigate("WriteMessageForJointAccount", {

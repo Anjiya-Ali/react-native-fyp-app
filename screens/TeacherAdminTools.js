@@ -410,7 +410,7 @@ function Courses() {
                         </View>
                         <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
                             <TouchableOpacity onPress={() => navigation.navigate("ViewMemberForJointAccount", {
-                                additionalData: course._id,
+                                additionalData: course.post_id,
                             })}>
                                 <Text style={{ color: Color.colorSlateblue, fontSize: 14, fontWeight: 'bold', marginRight: 12, marginBottom: 10 }}>Send Joint Account Request</Text>
                             </TouchableOpacity>

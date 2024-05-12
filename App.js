@@ -1,7 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { LogBox } from "react-native";
-import { View, Text, Pressable, TouchableOpacity } from "react-native";
 import CourseState from "./context/Courses/courseState";
 import CartState from "./context/Cart/cartState";
 import SessionState from "./context/Sessions/sessionState";
@@ -99,7 +98,31 @@ import ViewSingleJointAccountRequest from "./screens/ViewSingleJointAccountReque
 import StudentProfile from "./screens/StudentProfile"
 import TeacherProfile from "./screens/TeacherProfile"
 import MySessions from "./screens/MySessions"
-import Toast from "react-native-toast-message";
+import CommunityPage from "./components/CommunityPage";
+import CommunityState from "./context/Community/CommunityState";
+import CommunityInit from "./components/CommunityInit";
+import CommunityPostState from "./context/Posts/CommunityPostState";
+import LikedMemberScreen from "./components/LikedMemberScreen";
+import CommunityCommentState from "./context/CommunityComments/CommunityCommentsState";
+import CommentsScreen from "./components/CommentsScreen";
+import LikedMembersCommentsScreen from "./components/LikedMembersCommentsScreen";
+import PostMembers from "./components/PostMembers";
+import CreateCommunityPage from "./components/CreateCommunityPage";
+import UpdateCommunityScreen from "./components/UpdateCommuityScreen";
+import DeleteCommunityScreen from "./components/DeleteCommunityScreen";
+import CreatePostPage from "./components/CreatePostPage";
+import EditPostPage from "./components/EditPostPage";
+import NewsFeedInit from "./components/NewsFeedInit";
+import NewsFeedState from "./context/NewsFeed/NewsFeedState";
+import PersonalPostState from "./context/PersonalPosts/PersonalPostState";
+import PersonalPost from "./components/PersonalPost";
+import CreateMyPostPage from "./components/CreateMyPostPage";
+import LikedMyPostMemberScreen from "./components/LikedMyPostMemberScreen";
+import MyCommentsScreen from "./components/MyCommentsScreen";
+import MyCommentState from "./context/MyComments/MyCommentsState";
+import MyLikedMembersCommentsScreen from "./components/MyLikedMembersCommentsScreen";
+import EditMyPost from "./components/EditMyPost";
+import CommunityMembersRendering from "./components/CommunityMembersRendering.js";
 import { useEffect, useRef, useState } from 'react';
 import { PermissionsAndroid, Platform, SafeAreaView, StatusBar } from 'react-native';
 import { CometChat } from "@cometchat/chat-sdk-react-native";
@@ -107,14 +130,19 @@ import { COMETCHAT_CONSTANTS } from './src/CONSTS';
 import { CometChatContextProvider } from '@cometchat/chat-uikit-react-native';
 import { CometChatTheme } from '@cometchat/chat-uikit-react-native';
 import { CometChatUIKit } from '@cometchat/chat-uikit-react-native';
-import StackNavigator from './src/StackNavigator';
 import { UserContextProvider } from './UserContext';
 import { CometChatIncomingCall } from '@cometchat/chat-uikit-react-native';
 import { CometChatUIEventHandler } from '@cometchat/chat-uikit-react-native';
 import { metaInfo } from './src/metaInfo';
 import usePushNotification from './src/hooks/usePushNotification';
 
-import { createStackNavigator } from "@react-navigation/stack";
+import messaging from '@react-native-firebase/messaging'
+import PushNotification from 'react-native-push-notification';
+import * as RootNavigation from './RootNavigation';
+import { TokenRegisterHandler } from './utils/tokenRegisterHandler';
+import { NotificationHandler } from './utils/notificationHandler';
+import { AndroidStyle } from '@notifee/react-native';
+
 import AdminState from "./context/Admin/AdminState";
 import TopicRequestState from "./context/TopicRequest/TopicRequestState";
 import ManageStudents from "./screens/ManageStudents";
@@ -194,6 +222,239 @@ const App = () => {
     LogBox.ignoreLogs(["Warning: ..."]);
     LogBox.ignoreAllLogs();
 
+    new TokenRegisterHandler();
+    new NotificationHandler();
+
+    PushNotification.channelExists('learnlance', function (exists) {
+        if (!exists) {
+            PushNotification.createChannel(
+                {
+                    channelId: "learnlance",
+                    channelName: "LearnLance",
+                    channelDescription: "A channel to categorise your notifications",
+                },
+                (created) => console.log(`createChannel returned '${created}'`)
+            );
+        }
+    });
+
+    messaging().onMessage(async (remoteMessage) => {
+        PushNotification.localNotification({
+            message: remoteMessage.notification.body,
+            title: remoteMessage.notification.title,
+            channelId: "learnlance",
+            data: remoteMessage.data
+        });
+        handleMessages(remoteMessage);
+    });
+
+    messaging().setBackgroundMessageHandler(async remoteMessage => {
+        console.log('Message handled in the background!');
+        handleMessages(remoteMessage, true);
+    });
+
+    PushNotification.configure({
+        onNotification: function (notification) {
+            if (notification.data.redirect) {
+                RootNavigation.navigate(notification.data.redirect);
+            }
+        }
+    })
+
+    messaging().onNotificationOpenedApp(async remoteMessage => {
+        RootNavigation.navigate(remoteMessage.data.redirect)
+    });
+
+    handleMessages = (firebaseMessage, inbackground = false) => {
+        try {
+            let msg = null;
+
+            if (firebaseMessage && firebaseMessage.data && firebaseMessage.data.message) {
+                msg = CometChat.CometChatHelper.processMessage(
+                    JSON.parse(firebaseMessage.data.message)
+                );
+
+                if (msg.category == 'message' && inbackground) {
+                    switch (msg.type) {
+                        case 'text':
+                            NotificationHandler.displayNotification({
+                                id: msg.muid,
+                                title: msg.sender.name,
+                                body: msg.text,
+                                data: {
+                                    conversationId: msg.conversationId,
+                                    senderUid: msg.sender.uid,
+                                    receiverType: msg.receiverType,
+                                    guid: msg.receiverId,
+                                },
+                                android: { largeIcon: msg.sender.avatar },
+                            });
+                            CometChat.markAsDelivered(msg);
+                            break;
+                        case 'image':
+                            NotificationHandler.displayNotification({
+                                id: msg.muid,
+                                title: msg.sender.name,
+                                body: 'Sent an image',
+                                data: {
+                                    conversationId: msg.conversationId,
+                                    senderUid: msg.sender.uid,
+                                    receiverType: msg.receiverType,
+                                    guid: msg.receiverId,
+                                },
+                                android: {
+                                    style: {
+                                        type: AndroidStyle.BIGPICTURE,
+                                        picture: msg?.data?.attachments
+                                            ? msg.data.attachments[0]['url']
+                                            : '',
+                                    },
+
+                                    largeIcon: msg.sender.avatar,
+                                },
+                            });
+                            CometChat.markAsDelivered(msg);
+                            break;
+                        case 'video':
+                            NotificationHandler.displayNotification({
+                                id: msg.muid,
+                                title: msg.sender.name,
+                                body: 'Sent a video',
+                                data: {
+                                    conversationId: msg.conversationId,
+                                    senderUid: msg.sender.uid,
+                                    receiverType: msg.receiverType,
+                                    guid: msg.receiverId,
+                                },
+                                android: {
+                                    style: {
+                                        type: AndroidStyle.BIGPICTURE,
+                                        picture: msg?.data?.attachments
+                                            ? msg.data.attachments[0]['url']
+                                            : '',
+                                    },
+
+                                    largeIcon: msg.sender.avatar,
+                                },
+                            });
+                            CometChat.markAsDelivered(msg);
+                            break;
+                        case 'file':
+                            NotificationHandler.displayNotification({
+                                id: msg.muid,
+                                title: msg.sender.name,
+                                body: 'Sent a file',
+                                data: {
+                                    conversationId: msg.conversationId,
+                                    senderUid: msg.sender.uid,
+                                    receiverType: msg.receiverType,
+                                    guid: msg.receiverId,
+                                },
+                                android: {
+                                    largeIcon: msg.sender.avatar,
+                                },
+                            });
+                            CometChat.markAsDelivered(msg);
+                            break;
+                        case 'audio':
+                            NotificationHandler.displayNotification({
+                                id: msg.muid,
+                                title: msg.sender.name,
+                                body: 'Sent an audio file',
+                                data: {
+                                    conversationId: msg.conversationId,
+                                    senderUid: msg.sender.uid,
+                                    receiverType: msg.receiverType,
+                                    guid: msg.receiverId,
+                                },
+                                android: {
+                                    largeIcon: msg.sender.avatar,
+                                },
+                            });
+                            CometChat.markAsDelivered(msg);
+                            break;
+                        case 'media':
+                            NotificationHandler.displayNotification({
+                                id: msg.muid,
+                                title: msg.sender.name,
+                                body: 'Sent a file',
+                                data: {
+                                    conversationId: msg.conversationId,
+                                    senderUid: msg.sender.uid,
+                                    receiverType: msg.receiverType,
+                                    guid: msg.receiverId,
+                                },
+                                android: {
+                                    largeIcon: msg.sender.avatar,
+                                },
+                            });
+                            CometChat.markAsDelivered(msg);
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+                if (msg.category == 'call') {
+                    switch (msg.action) {
+                        case 'initiated':
+                            NotificationHandler.msg = msg;
+                            NotificationHandler.displayCallAndroid();
+                            break;
+                        case 'ended':
+                            CometChat.clearActiveCall();
+                            NotificationHandler.endCall(NotificationHandler.callerId);
+                            break;
+                        case 'unanswered':
+                            CometChat.clearActiveCall();
+                            NotificationHandler.removeCallDialerWithUUID(
+                                NotificationHandler.callerId,
+                            );
+                            break;
+                        case 'busy':
+                            CometChat.clearActiveCall();
+                            NotificationHandler.removeCallDialerWithUUID(
+                                NotificationHandler.callerId,
+                            );
+                            break;
+                        case 'ongoing':
+                            NotificationHandler.displayNotification({
+                                title: msg?.callReceiver?.name || '',
+                                body: 'ongoing call',
+                            });
+                            RootNavigation.navigate({
+                                index: 0,
+                                routes: [
+                                    {
+                                        name: 'CallScreen',
+                                        params: { call: msg, needReset: true },
+                                    },
+                                ],
+                            });
+                            break;
+                        case 'rejected':
+                            CometChat.clearActiveCall();
+                            NotificationHandler.removeCallDialerWithUUID(
+                                NotificationHandler.callerId,
+                            );
+                            break;
+                        case 'cancelled':
+                            CometChat.clearActiveCall();
+                            NotificationHandler.removeCallDialerWithUUID(
+                                NotificationHandler.callerId,
+                            );
+                            break;
+                        default:
+                            break;
+                    }
+                    return;
+                }
+            }
+        } catch (e) {
+            console.log(e);
+        }
+    };
+
     const {
         requestUserPermission,
         getFCMToken,
@@ -219,7 +480,7 @@ const App = () => {
 
     useEffect(() => {
         const lockScreenOrientation = async () => {
-          Orientation.lockToPortrait();
+            Orientation.lockToPortrait();
         };
 
         lockScreenOrientation();
@@ -242,13 +503,12 @@ const App = () => {
             appId: COMETCHAT_CONSTANTS.APP_ID,
             authKey: COMETCHAT_CONSTANTS.AUTH_KEY,
             region: COMETCHAT_CONSTANTS.REGION,
+        }).then(() => {
+            try { CometChat.setDemoMetaInfo(metaInfo) } catch (err) { }
+            if (CometChat.setSource) {
+                CometChat.setSource('ui-kit', Platform.OS, 'react-native');
+            }
         })
-            .then(() => {
-                try { CometChat.setDemoMetaInfo(metaInfo) } catch (err) { }
-                if (CometChat.setSource) {
-                    CometChat.setSource('ui-kit', Platform.OS, 'react-native');
-                }
-            })
             .catch(() => {
                 return null;
             });
@@ -318,439 +578,860 @@ const App = () => {
                                                 <CartState>
                                                     <SessionState>
                                                         <NotificationState>
-                                                            <NavigationContainer ref={navigationRef}>
-                                                                {hideSplashScreen ? (
-                                                                    <Stack.Navigator headerMode="none">
-                                                                        <Stack.Screen
-                                                                            name="Main"
-                                                                            component={Main}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        
-                                                                        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="Home2" component={Home2} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="CourseBuilder" component={CourseBuilder} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="Notifications" component={Notifications} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="ConversationsModule" component={ConversationComponentList} />
-                                                                        <Stack.Screen name="MessagesModule" component={MessageModuleList} />
-                                                                        <Stack.Screen name="CallsModule" component={CallFeatureList} />
-                                                                        <Stack.Screen name="CallButton" component={CallButton} />
-                                                                        <Stack.Screen name="IncomingCall" component={IncomingCall} options={{ gestureEnabled: false }} />
-                                                                        <Stack.Screen name="OutgoingCall" component={OutgoingCall} />
-                                                                        <Stack.Screen name="CallBubble" component={CallBubble} />
-                                                                        <Stack.Screen name="CallLogsModule" component={CallLogsModuleList} />
-                                                                        <Stack.Screen name="CometChatCallLogs" component={CometChatCallLogs} />
-                                                                        <Stack.Screen name="CometChatCallLogsWithDetails" component={CometChatCallLogsWithDetails} />
-                                                                        <Stack.Screen name="CometChatCallLogDetails" component={CallLogDetails} />
-                                                                        <Stack.Screen name="CometChatCallLogParticipants" component={CallLogParticipants} />
-                                                                        <Stack.Screen name="CometChatCallLogRecordings" component={CallLogRecordings} />
-                                                                        <Stack.Screen name="CometChatCallLogHistory" component={CallLogHistory} />
-                                                                        <Stack.Screen name="Contacts" component={Contacts} />
-                                                                        <Stack.Screen name="CallScreen" component={CallScreen} />
-                                                                        <Stack.Screen name="SharedModule" component={SharedModuleList} />
-                                                                        <Stack.Screen name="UsersModule" component={UserModuleList} />
-                                                                        <Stack.Screen name="GroupsModule" component={GroupModuleList} />
-                                                                        <Stack.Screen name="ConversationsWithMessages" component={ConversationsWithMessages} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="Conversations" component={CometChatConversations} />
-                                                                        <Stack.Screen name="Messages" component={Messages} />
-                                                                        <Stack.Screen name="MessageHeader" component={MessageHeader} />
-                                                                        <Stack.Screen name="MessageList" component={MessageList} />
-                                                                        <Stack.Screen name="MessageComposer" component={MessageComposer} />
-                                                                        <Stack.Screen name="MessageInformation" component={MessageInformation} />
-                                                                        <Stack.Screen name="UsersWithMessages" component={CometChatUsersWithMessages} />
-                                                                        <Stack.Screen name="Users" component={CometChatUsers} />
-                                                                        <Stack.Screen name="Details" component={Details} />
-                                                                        <Stack.Screen name="GroupsWithMessages" component={GroupsWithMessages} />
-                                                                        <Stack.Screen name="Groups" component={Groups} />
-                                                                        <Stack.Screen name="CreateGroup" component={CreateGroup} />
-                                                                        <Stack.Screen name="JoinGroup" component={JoinGroup} />
-                                                                        <Stack.Screen name="GroupMember" component={GroupMember} />
-                                                                        <Stack.Screen name="AddMember" component={AddMember} />
-                                                                        <Stack.Screen name="TransferOwnership" component={TransferOwnership} />
-                                                                        <Stack.Screen name="BannedMembers" component={BannedMembers} />
-                                                                        <Stack.Screen name="GroupDetails" component={GroupDetails} />
-                                                                        <Stack.Screen name="AudioBubble" component={AudioBubble} />
-                                                                        <Stack.Screen name="Avatar" component={Avatar} />
-                                                                        <Stack.Screen name="BadgeCount" component={BadgeCount} />
-                                                                        <Stack.Screen name="FileBubble" component={FileBubble} />
-                                                                        <Stack.Screen name="ImageBubble" component={ImageBubble} />
-                                                                        <Stack.Screen name="ListItem" component={ListItem} />
-                                                                        <Stack.Screen name="Localize" component={Localize} />
-                                                                        <Stack.Screen name="MessageReceipt" component={MessageReceipt} />
-                                                                        <Stack.Screen name="SoundManager" component={SoundManager} />
-                                                                        <Stack.Screen name="StatusIndicator" component={StatusIndicator} />
-                                                                        <Stack.Screen name="TextBubble" component={TextBubble} />
-                                                                        <Stack.Screen name="Theme" component={Theme} />
-                                                                        <Stack.Screen name="VideoBubble" component={VideoBubble} />
-                                                                        <Stack.Screen name="MediaRecorder" component={MediaRecorder} />
-                                                                        <Stack.Screen name="FormBubble" component={FormBubble} />
-                                                                        <Stack.Screen name="CardBubble" component={CardBubble} />
-                                                                        <Stack.Screen name="SchedulerBubble" component={SchedulerBubble} />
-                                                                        <Stack.Screen
-                                                                            name="MyConnections"
-                                                                            component={MyConnections}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="ViewMemberForJointAccount"
-                                                                            component={ViewMemberForJointAccount}
-                                                                            options={{ headerShown: false }}
-                                                                            initialParams={{ additionalData: "653c16d7de4f4f52b4ac58c0" }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="ViewJointAccountRequests"
-                                                                            component={ViewJointAccountRequests}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="Section1Screen"
-                                                                            component={Section1Screen}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="Section2Screen"
-                                                                            component={Section2Screen}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="Section3Screen"
-                                                                            component={Section3Screen}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="Register"
-                                                                            component={Register}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="Register1"
-                                                                            component={Register1}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="EmailVerification"
-                                                                            component={EmailVerification}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="PasswordVerification"
-                                                                            component={PasswordVerification}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="CodeVerification"
-                                                                            component={CodeVerification}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="OtherProfilePage"
-                                                                            component={OtherProfilePage}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="TeacherProfilePage"
-                                                                            component={TeacherProfilePage}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="StudentProfilePage"
-                                                                            component={StudentProfilePage}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="ViewSingleJointAccountRequest"
-                                                                            component={ViewSingleJointAccountRequest}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="MypendingInvitations"
-                                                                            component={MypendingInvitations}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="MyAcceptedInvitations"
-                                                                            component={MyAcceptedInvitations}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="WriteMessageForJointAccount"
-                                                                            component={WriteMessageForJointAccount}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="AdministrativeTools"
-                                                                            component={AdministrativeTools}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="AddQuiz"
-                                                                            component={AddQuiz}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="InviteSuccessful"
-                                                                            component={InviteSuccessful}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="MyFollowers"
-                                                                            component={MyFollowers}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="MyPendingConnections"
-                                                                            component={MyPendingConnections}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="UpdateSingleHawScreenT"
-                                                                            component={UpdateSingleHawScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="UpdateSingleProjectScreenT"
-                                                                            component={UpdateSingleProjectScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="UpdateSingleCertificationScreenT"
-                                                                            component={UpdateSingleCertificationScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="UpdateSingleLanguageScreenT"
-                                                                            component={UpdateSingleLanguageScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="UpdateSingleExperienceScreenT"
-                                                                            component={UpdateSingleExperienceScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="UpdateSingleEducationScreenT"
-                                                                            component={UpdateSingleEducationScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="EditExperienceScreenT"
-                                                                            component={EditExperienceScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="EditEducationScreenT"
-                                                                            component={EditEducationScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="EditCertificationScreenT"
-                                                                            component={EditCertificationScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="EditHawScreenT"
-                                                                            component={EditHawScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="EditProjectScreenT"
-                                                                            component={EditProjectScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="EditSkillScreenT"
-                                                                            component={EditSkillScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="EditLanguageScreenT"
-                                                                            component={EditLanguageScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="AddProjectScreenT"
-                                                                            component={AddProjectScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="AddSkillScreenT"
-                                                                            component={AddSkillScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="AddHawScreenT"
-                                                                            component={AddHawScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="AddLanguageScreenT"
-                                                                            component={AddLanguageScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="AddExperienceScreenT"
-                                                                            component={AddExperienceScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="AddCertificationScreenT"
-                                                                            component={AddCertificationScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="AddEducationScreenT"
-                                                                            component={AddEducationScreenT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="ViewAllHawT"
-                                                                            component={ViewAllHawT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="ViewAllLanguagesT"
-                                                                            component={ViewAllLanguagesT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="ViewAllFeedbacksT"
-                                                                            component={ViewAllFeedbacksT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="ViewAllSkillsT"
-                                                                            component={ViewAllSkillsT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="ViewAllExperiencesT"
-                                                                            component={ViewAllExperiencesT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="ViewAllCertificationsT"
-                                                                            component={ViewAllCertificationsT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="ViewAllProjectsT"
-                                                                            component={ViewAllProjectsT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="ViewAllEducationT"
-                                                                            component={ViewAllEducationT}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="AddLanguageScreen"
-                                                                            component={AddLanguageScreen}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="UpdateSingleLanguageScreen"
-                                                                            component={UpdateSingleLanguageScreen}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="EditLanguageScreen"
-                                                                            component={EditLanguageScreen}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="AddInterestScreen"
-                                                                            component={AddInterestScreen}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="UpdateSingleInterestScreen"
-                                                                            component={UpdateSingleInterestScreen}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="EditInterestScreen"
-                                                                            component={EditInterestScreen}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="AddEducationScreen"
-                                                                            component={AddEducationScreen}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="UpdateSingleEducationScreen"
-                                                                            component={UpdateSingleEducationScreen}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="EditEducationScreen"
-                                                                            component={EditEducationScreen}
-                                                                            options={{ headerShown: false }}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="ViewAllLanguages"
-                                                                            component={ViewAllLanguages}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="ViewAllEducation"
-                                                                            component={ViewAllEducation}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="ViewAllBadges"
-                                                                            component={ViewAllBadges}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="ViewAllCertifications"
-                                                                            component={ViewAllCertifications}
-                                                                        />
-                                                                        <Stack.Screen
-                                                                            name="ViewAllInterests"
-                                                                            component={ViewAllInterests}
-                                                                        />
-                                                                        <Stack.Screen name="HomePage1" component={HomePage1} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="TeacherHomePage" component={TeacherHomePage} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="MySessions" component={MySessions} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name={SCREEN_NAMES.Home} component={Home} />
-                                                                        <Stack.Screen name="StudentProfile" component={StudentProfile} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="MyCourses" component={MyCourses} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="TeacherProfile" component={TeacherProfile} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="Certificate" component={Certificate} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="ELearningPage" component={ELearningPage} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="BuyCourseCart" component={BuyCourseCart} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="BuyCourse" component={BuyCourse} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="Feedback" component={Feedback} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="Cart4" component={Cart4} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="Cart3" component={Cart3} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="SingleCourse" component={SingleCourse} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="Quiz" component={Quiz} options={{ headerShown: false }} />
-                                                                        <Stack.Screen name="CoursesE1" component={CoursesE1} options={{ headerShown: false }} />
+                                                            <NewsFeedState>
+                                                                <PersonalPostState>
+                                                                    <MyCommentState>
+                                                                        <CommunityState>
+                                                                            <CommunityPostState>
+                                                                                <CommunityCommentState>
+                                                                                    <SocialHubState>
+                                                                                        <AdminState>
+                                                                                            <TopicRequestState>
+                                                                                                <ElearnState>
+                                                                                                    <MeetingSchedulingState>
+                                                                                                        <NavigationContainer ref={navigationRef}>
+                                                                                                            {hideSplashScreen ? (
+                                                                                                                <Stack.Navigator headerMode="none">
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="Main"
+                                                                                                                        component={Main}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
 
-                                                                        <Stack.Screen name={SCREEN_NAMES.Viewer_Home} component={Viewer_Home} options={{
-                                                                            headerStyle: {
-                                                                                backgroundColor: colors.primary['900'],
-                                                                            },
-                                                                            headerBackTitle: 'Home',
-                                                                            headerTintColor: '#fff',
-                                                                            headerTitleStyle: {
-                                                                                fontWeight: 'bold',
-                                                                            },
-                                                                        }} />
-                                                                        <Stack.Screen name={SCREEN_NAMES.Speaker_Home} component={Speaker_Home} options={{
-                                                                            headerStyle: {
-                                                                                backgroundColor: colors.primary['900'],
-                                                                            },
-                                                                            headerBackTitle: 'Home',
-                                                                            headerTintColor: '#fff',
-                                                                            headerTitleStyle: {
-                                                                                fontWeight: 'bold',
-                                                                            },
-                                                                        }} />
-                                                                        <Stack.Screen name={SCREEN_NAMES.Meeting} component={Meeting} options={{ headerShown: false }} />
-                                                                    </Stack.Navigator>
-                                                                ) : null}
-                                                            </NavigationContainer>
+                                                                                                                    <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="Home2" component={Home2} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="CourseBuilder" component={CourseBuilder} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="Notifications" component={Notifications} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="ConversationsModule" component={ConversationComponentList} />
+                                                                                                                    <Stack.Screen name="MessagesModule" component={MessageModuleList} />
+                                                                                                                    <Stack.Screen name="CallsModule" component={CallFeatureList} />
+                                                                                                                    <Stack.Screen name="CallButton" component={CallButton} />
+                                                                                                                    <Stack.Screen name="IncomingCall" component={IncomingCall} options={{ gestureEnabled: false }} />
+                                                                                                                    <Stack.Screen name="OutgoingCall" component={OutgoingCall} />
+                                                                                                                    <Stack.Screen name="CallBubble" component={CallBubble} />
+                                                                                                                    <Stack.Screen name="CallLogsModule" component={CallLogsModuleList} />
+                                                                                                                    <Stack.Screen name="CometChatCallLogs" component={CometChatCallLogs} />
+                                                                                                                    <Stack.Screen name="CometChatCallLogsWithDetails" component={CometChatCallLogsWithDetails} />
+                                                                                                                    <Stack.Screen name="CometChatCallLogDetails" component={CallLogDetails} />
+                                                                                                                    <Stack.Screen name="CometChatCallLogParticipants" component={CallLogParticipants} />
+                                                                                                                    <Stack.Screen name="CometChatCallLogRecordings" component={CallLogRecordings} />
+                                                                                                                    <Stack.Screen name="CometChatCallLogHistory" component={CallLogHistory} />
+                                                                                                                    <Stack.Screen name="Contacts" component={Contacts} />
+                                                                                                                    <Stack.Screen name="CallScreen" component={CallScreen} />
+                                                                                                                    <Stack.Screen name="SharedModule" component={SharedModuleList} />
+                                                                                                                    <Stack.Screen name="UsersModule" component={UserModuleList} />
+                                                                                                                    <Stack.Screen name="GroupsModule" component={GroupModuleList} />
+                                                                                                                    <Stack.Screen name="ConversationsWithMessages" component={ConversationsWithMessages} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="Conversations" component={CometChatConversations} />
+                                                                                                                    <Stack.Screen name="Messages" component={Messages} />
+                                                                                                                    <Stack.Screen name="MessageHeader" component={MessageHeader} />
+                                                                                                                    <Stack.Screen name="MessageList" component={MessageList} />
+                                                                                                                    <Stack.Screen name="MessageComposer" component={MessageComposer} />
+                                                                                                                    <Stack.Screen name="MessageInformation" component={MessageInformation} />
+                                                                                                                    <Stack.Screen name="UsersWithMessages" component={CometChatUsersWithMessages} />
+                                                                                                                    <Stack.Screen name="Users" component={CometChatUsers} />
+                                                                                                                    <Stack.Screen name="Details" component={Details} />
+                                                                                                                    <Stack.Screen name="GroupsWithMessages" component={GroupsWithMessages} />
+                                                                                                                    <Stack.Screen name="Groups" component={Groups} />
+                                                                                                                    <Stack.Screen name="CreateGroup" component={CreateGroup} />
+                                                                                                                    <Stack.Screen name="JoinGroup" component={JoinGroup} />
+                                                                                                                    <Stack.Screen name="GroupMember" component={GroupMember} />
+                                                                                                                    <Stack.Screen name="AddMember" component={AddMember} />
+                                                                                                                    <Stack.Screen name="TransferOwnership" component={TransferOwnership} />
+                                                                                                                    <Stack.Screen name="BannedMembers" component={BannedMembers} />
+                                                                                                                    <Stack.Screen name="GroupDetails" component={GroupDetails} />
+                                                                                                                    <Stack.Screen name="AudioBubble" component={AudioBubble} />
+                                                                                                                    <Stack.Screen name="Avatar" component={Avatar} />
+                                                                                                                    <Stack.Screen name="BadgeCount" component={BadgeCount} />
+                                                                                                                    <Stack.Screen name="FileBubble" component={FileBubble} />
+                                                                                                                    <Stack.Screen name="ImageBubble" component={ImageBubble} />
+                                                                                                                    <Stack.Screen name="ListItem" component={ListItem} />
+                                                                                                                    <Stack.Screen name="Localize" component={Localize} />
+                                                                                                                    <Stack.Screen name="MessageReceipt" component={MessageReceipt} />
+                                                                                                                    <Stack.Screen name="SoundManager" component={SoundManager} />
+                                                                                                                    <Stack.Screen name="StatusIndicator" component={StatusIndicator} />
+                                                                                                                    <Stack.Screen name="TextBubble" component={TextBubble} />
+                                                                                                                    <Stack.Screen name="Theme" component={Theme} />
+                                                                                                                    <Stack.Screen name="VideoBubble" component={VideoBubble} />
+                                                                                                                    <Stack.Screen name="MediaRecorder" component={MediaRecorder} />
+                                                                                                                    <Stack.Screen name="FormBubble" component={FormBubble} />
+                                                                                                                    <Stack.Screen name="CardBubble" component={CardBubble} />
+                                                                                                                    <Stack.Screen name="SchedulerBubble" component={SchedulerBubble} />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="MyConnections"
+                                                                                                                        component={MyConnections}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="Community"
+                                                                                                                        component={CommunityPage}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="MyPosts"
+                                                                                                                        component={PersonalPost}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="NewsFeedInit"
+                                                                                                                        component={NewsFeedInit}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="CreateMyPost"
+                                                                                                                        component={CreateMyPostPage}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="LikedMyPostMembers"
+                                                                                                                        component={
+                                                                                                                            LikedMyPostMemberScreen
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="MyComments"
+                                                                                                                        component={MyCommentsScreen}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="MyCommentsLikedMembers"
+                                                                                                                        component={
+                                                                                                                            MyLikedMembersCommentsScreen
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="CreateCommunity"
+                                                                                                                        component={
+                                                                                                                            CreateCommunityPage
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="UpdateCommunity"
+                                                                                                                        component={
+                                                                                                                            UpdateCommunityScreen
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="DeleteCommunity"
+                                                                                                                        component={
+                                                                                                                            DeleteCommunityScreen
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="CommunityInit"
+                                                                                                                        component={CommunityInit}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="CreatePost"
+                                                                                                                        component={CreatePostPage}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="EditPost"
+                                                                                                                        component={EditPostPage}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="EditMyPost"
+                                                                                                                        component={EditMyPost}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="PostMembers"
+                                                                                                                        component={PostMembers}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="LikedMembers"
+                                                                                                                        component={
+                                                                                                                            LikedMemberScreen
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="CommunityComments"
+                                                                                                                        component={CommentsScreen}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="CommunityCommentsLikedMembers"
+                                                                                                                        component={
+                                                                                                                            LikedMembersCommentsScreen
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewMemberForJointAccount"
+                                                                                                                        component={ViewMemberForJointAccount}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                        initialParams={{ additionalData: "653c16d7de4f4f52b4ac58c0" }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewJointAccountRequests"
+                                                                                                                        component={ViewJointAccountRequests}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="Section1Screen"
+                                                                                                                        component={Section1Screen}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="Section2Screen"
+                                                                                                                        component={Section2Screen}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="Section3Screen"
+                                                                                                                        component={Section3Screen}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="Register"
+                                                                                                                        component={Register}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="Register1"
+                                                                                                                        component={Register1}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="EmailVerification"
+                                                                                                                        component={EmailVerification}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="PasswordVerification"
+                                                                                                                        component={PasswordVerification}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="CodeVerification"
+                                                                                                                        component={CodeVerification}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="OtherProfilePage"
+                                                                                                                        component={OtherProfilePage}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="TeacherProfilePage"
+                                                                                                                        component={TeacherProfilePage}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="StudentProfilePage"
+                                                                                                                        component={StudentProfilePage}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewSingleJointAccountRequest"
+                                                                                                                        component={ViewSingleJointAccountRequest}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="MypendingInvitations"
+                                                                                                                        component={MypendingInvitations}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="MyAcceptedInvitations"
+                                                                                                                        component={MyAcceptedInvitations}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="WriteMessageForJointAccount"
+                                                                                                                        component={WriteMessageForJointAccount}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="AdministrativeTools"
+                                                                                                                        component={AdministrativeTools}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="AddQuiz"
+                                                                                                                        component={AddQuiz}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="InviteSuccessful"
+                                                                                                                        component={InviteSuccessful}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="MyFollowers"
+                                                                                                                        component={MyFollowers}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="MyPendingConnections"
+                                                                                                                        component={MyPendingConnections}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="UpdateSingleHawScreenT"
+                                                                                                                        component={UpdateSingleHawScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="UpdateSingleProjectScreenT"
+                                                                                                                        component={UpdateSingleProjectScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="UpdateSingleCertificationScreenT"
+                                                                                                                        component={UpdateSingleCertificationScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="UpdateSingleLanguageScreenT"
+                                                                                                                        component={UpdateSingleLanguageScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="CommunityMembersRendering"
+                                                                                                                        component={
+                                                                                                                            CommunityMembersRendering
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="UpdateSingleExperienceScreenT"
+                                                                                                                        component={UpdateSingleExperienceScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="UpdateSingleEducationScreenT"
+                                                                                                                        component={UpdateSingleEducationScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="EditExperienceScreenT"
+                                                                                                                        component={EditExperienceScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="EditEducationScreenT"
+                                                                                                                        component={EditEducationScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="EditCertificationScreenT"
+                                                                                                                        component={EditCertificationScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="EditHawScreenT"
+                                                                                                                        component={EditHawScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="EditProjectScreenT"
+                                                                                                                        component={EditProjectScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="EditSkillScreenT"
+                                                                                                                        component={EditSkillScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="EditLanguageScreenT"
+                                                                                                                        component={EditLanguageScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="AddProjectScreenT"
+                                                                                                                        component={AddProjectScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="AddSkillScreenT"
+                                                                                                                        component={AddSkillScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="AddHawScreenT"
+                                                                                                                        component={AddHawScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="AddLanguageScreenT"
+                                                                                                                        component={AddLanguageScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="AddExperienceScreenT"
+                                                                                                                        component={AddExperienceScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="AddCertificationScreenT"
+                                                                                                                        component={AddCertificationScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="AddEducationScreenT"
+                                                                                                                        component={AddEducationScreenT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewAllHawT"
+                                                                                                                        component={ViewAllHawT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewAllLanguagesT"
+                                                                                                                        component={ViewAllLanguagesT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewAllFeedbacksT"
+                                                                                                                        component={ViewAllFeedbacksT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewAllSkillsT"
+                                                                                                                        component={ViewAllSkillsT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewAllExperiencesT"
+                                                                                                                        component={ViewAllExperiencesT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewAllCertificationsT"
+                                                                                                                        component={ViewAllCertificationsT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewAllProjectsT"
+                                                                                                                        component={ViewAllProjectsT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewAllEducationT"
+                                                                                                                        component={ViewAllEducationT}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="AddLanguageScreen"
+                                                                                                                        component={AddLanguageScreen}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="UpdateSingleLanguageScreen"
+                                                                                                                        component={UpdateSingleLanguageScreen}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="EditLanguageScreen"
+                                                                                                                        component={EditLanguageScreen}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="AddInterestScreen"
+                                                                                                                        component={AddInterestScreen}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="UpdateSingleInterestScreen"
+                                                                                                                        component={UpdateSingleInterestScreen}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="EditInterestScreen"
+                                                                                                                        component={EditInterestScreen}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="AddEducationScreen"
+                                                                                                                        component={AddEducationScreen}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="UpdateSingleEducationScreen"
+                                                                                                                        component={UpdateSingleEducationScreen}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="EditEducationScreen"
+                                                                                                                        component={EditEducationScreen}
+                                                                                                                        options={{ headerShown: false }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewAllLanguages"
+                                                                                                                        component={ViewAllLanguages}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewAllEducation"
+                                                                                                                        component={ViewAllEducation}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewAllBadges"
+                                                                                                                        component={ViewAllBadges}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewAllCertifications"
+                                                                                                                        component={ViewAllCertifications}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewAllInterests"
+                                                                                                                        component={ViewAllInterests}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen name="HomePage1" component={HomePage1} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="TeacherHomePage" component={TeacherHomePage} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="MySessions" component={MySessions} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name={SCREEN_NAMES.Home} component={Home} />
+                                                                                                                    <Stack.Screen name="StudentProfile" component={StudentProfile} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="MyCourses" component={MyCourses} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="TeacherProfile" component={TeacherProfile} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="Certificate" component={Certificate} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="ELearningPage" component={ELearningPage} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="BuyCourseCart" component={BuyCourseCart} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="BuyCourse" component={BuyCourse} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="Feedback" component={Feedback} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="Cart4" component={Cart4} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="Cart3" component={Cart3} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="SingleCourse" component={SingleCourse} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="Quiz" component={Quiz} options={{ headerShown: false }} />
+                                                                                                                    <Stack.Screen name="CoursesE1" component={CoursesE1} options={{ headerShown: false }} />
+
+                                                                                                                    <Stack.Screen name={SCREEN_NAMES.Viewer_Home} component={Viewer_Home} options={{
+                                                                                                                        headerStyle: {
+                                                                                                                            backgroundColor: colors.primary['900'],
+                                                                                                                        },
+                                                                                                                        headerBackTitle: 'Home',
+                                                                                                                        headerTintColor: '#fff',
+                                                                                                                        headerTitleStyle: {
+                                                                                                                            fontWeight: 'bold',
+                                                                                                                        },
+                                                                                                                    }} />
+                                                                                                                    <Stack.Screen name={SCREEN_NAMES.Speaker_Home} component={Speaker_Home} options={{
+                                                                                                                        headerStyle: {
+                                                                                                                            backgroundColor: colors.primary['900'],
+                                                                                                                        },
+                                                                                                                        headerBackTitle: 'Home',
+                                                                                                                        headerTintColor: '#fff',
+                                                                                                                        headerTitleStyle: {
+                                                                                                                            fontWeight: 'bold',
+                                                                                                                        },
+                                                                                                                    }} />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ManageStudents"
+                                                                                                                        component={ManageStudents}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ManageTeachers"
+                                                                                                                        component={ManageTeachers}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="MyTopicRequest"
+                                                                                                                        component={MyTopicRequest}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="CreateTopicRequest"
+                                                                                                                        component={
+                                                                                                                            CreateTopicRequest
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewProposals"
+                                                                                                                        component={ViewProposals}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="MyProposals"
+                                                                                                                        component={MyProposals}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewSingleProposal"
+                                                                                                                        component={
+                                                                                                                            ViewSingleProposal
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="MyRequestedProposals"
+                                                                                                                        component={
+                                                                                                                            MyRequestedProposals
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="MyActiveProposals"
+                                                                                                                        component={
+                                                                                                                            MyActiveProposals
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="MyClosedProposals"
+                                                                                                                        component={
+                                                                                                                            MyClosedProposals
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="EndContract"
+                                                                                                                        component={EndContract}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="AcceptProposal"
+                                                                                                                        component={AcceptProposal}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ProposalConfirmation"
+                                                                                                                        component={
+                                                                                                                            ProposalConfirmation
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="JobPosts"
+                                                                                                                        component={JobPosts}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="SingleJobPost"
+                                                                                                                        component={SingleJobPost}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ApplyTopicRequest"
+                                                                                                                        component={
+                                                                                                                            ApplyTopicRequest
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="BidSuccessful"
+                                                                                                                        component={BidSuccessful}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="TeacherProposals"
+                                                                                                                        component={TeacherProposals}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="ViewSingleProposalT"
+                                                                                                                        component={
+                                                                                                                            ViewSingleProposalT
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="MyRequestedProposalsT"
+                                                                                                                        component={
+                                                                                                                            MyRequestedProposalsT
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="MyActiveProposalsT"
+                                                                                                                        component={
+                                                                                                                            MyActiveProposalsT
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="MyClosedProposalsT"
+                                                                                                                        component={
+                                                                                                                            MyClosedProposalsT
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="PrivacyPolicy"
+                                                                                                                        component={PrivacyPolicy}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="UpcomingSessions"
+                                                                                                                        component={UpcomingSessions}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="FAQs"
+                                                                                                                        component={FAQs}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="AdminPayment"
+                                                                                                                        component={AdminPayment}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="Elearning"
+                                                                                                                        component={ELearning}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="Categories"
+                                                                                                                        component={Categories}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="CoursesSearch"
+                                                                                                                        component={CoursesSearch}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="Teachers"
+                                                                                                                        component={Teachers}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="CommunitySearch"
+                                                                                                                        component={CommunitySearch}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+
+                                                                                                                    <Stack.Screen
+                                                                                                                        name="MeetingsScreen"
+                                                                                                                        component={
+                                                                                                                            ScheduledMeetings
+                                                                                                                        }
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen name={SCREEN_NAMES.Meeting} component={Meeting} options={{ headerShown: false }} />
+                                                                                                                </Stack.Navigator>
+                                                                                                            ) : null}
+                                                                                                        </NavigationContainer>
+                                                                                                    </MeetingSchedulingState>
+                                                                                                </ElearnState>
+                                                                                            </TopicRequestState>
+                                                                                        </AdminState>
+                                                                                    </SocialHubState>
+                                                                                </CommunityCommentState>
+                                                                            </CommunityPostState>
+                                                                        </CommunityState>
+                                                                    </MyCommentState>
+                                                                </PersonalPostState>
+                                                            </NewsFeedState>
                                                         </NotificationState>
                                                     </SessionState>
                                                 </CartState>

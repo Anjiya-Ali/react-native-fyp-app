@@ -95,7 +95,7 @@ const MyActiveProposalsT = () => {
   const navigation = useNavigation();
 
   const flexD = "column";
-  const host = "http://192.168.0.147:3000";
+  const host = "http://helloworld-nodejs-4714.azurewebsites.net";
 
   return (
     <>

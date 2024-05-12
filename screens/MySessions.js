@@ -53,7 +53,7 @@ const MySessions = () => {
   const [showRejectModal, setShowRejectModal] = useState(false);
   const [requestId, setRequestId] = useState();
   const [session, setSession] = useState({});
-  const host = "http://192.168.0.147:3000";
+  const host = "http://helloworld-nodejs-4714.azurewebsites.net";
 
   useEffect(() => {
     const getMySessionsData = async () => {

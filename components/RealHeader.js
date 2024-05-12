@@ -35,7 +35,7 @@ const RealHeader = ({ heading, navigate, flag = true, data = {}, radius }) => {
         _id: 3,
         name: "My Chats",
         url: require("../assets/icons8chats24-21.png"),
-        screen: "HomePage1",
+        screen: "ConversationsWithMessages",
       },
       {
         _id: 4,
@@ -101,7 +101,7 @@ const RealHeader = ({ heading, navigate, flag = true, data = {}, radius }) => {
         _id: 14,
         name: "Notifications",
         url: require("../assets/icons8notifications64-1.png"),
-        screen: "HomePage1",
+        screen: "Notifications",
       },
       {
         _id: 15,
@@ -135,19 +135,13 @@ const RealHeader = ({ heading, navigate, flag = true, data = {}, radius }) => {
             _id: 2,
             name: "Administrative Tools",
             url: require("../assets/administrativetool.png"),
-            screen: "TeacherHomePage",
-          },
-          {
-            _id: 3,
-            name: "My Courses",
-            url: require("../assets/icons8course50-1-11.png"),
-            screen: "TeacherHomePage",
+            screen: "AdministrativeTools",
           },
           {
             _id: 4,
             name: "My Chats",
             url: require("../assets/icons8chats24-21.png"),
-            screen: "TeacherHomePage",
+            screen: "ConversationsWithMessages",
           },
           {
             _id: 5,

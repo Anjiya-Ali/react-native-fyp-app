@@ -3,7 +3,7 @@ import CommunityContext from "./CommunityContext";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const CommunityState = (props) => {
-  const host = "http://192.168.0.147:3000";
+  const host = "http://helloworld-nodejs-4714.azurewebsites.net";
 
   const [allComm, setAllCommunities] = useState([]);
   const [joinedComm, setJoinedCommunities] = useState([]);

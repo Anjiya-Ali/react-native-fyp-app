@@ -23,7 +23,7 @@ function Courses() {
   const [flatListKey, setFlatListKey] = useState('initialKey');
   const [search, setSearch] = useState('');
   const [filteredData, setFilteredData] = useState([]);
-  const host = "http://192.168.0.147:3000"
+  const host = "http://helloworld-nodejs-4714.azurewebsites.net"
 
   const navigation = useNavigation();
 

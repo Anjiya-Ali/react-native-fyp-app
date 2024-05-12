@@ -18,7 +18,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const EndContract = ({ route }) => {
   const flexD = "column";
-  const host = "http://192.168.0.147:3000";
+  const host = "http://helloworld-nodejs-4714.azurewebsites.net";
 
   const { additionalData } = route.params;
   const [selectedStars, setSelectedStars] = useState(0);

@@ -27,7 +27,7 @@ const CreateMyOwnTopicRequest = () => {
     const [teacherProfilePictureUrl, setTeacherProfilePictureUrl] = useState("");
     const [role, setRole] = useState("");
 
-    const host = "http://192.168.0.147:3000";
+    const host = "http://helloworld-nodejs-4714.azurewebsites.net";
     useEffect(() => {
         const fetchProfilePicture = async () => {
             const role = await AsyncStorage.getItem("role");

@@ -4,7 +4,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const MeetingSchedulingState = (props) => {
 
-    const host = "http://192.168.0.147:3000";
+    const host = "http://helloworld-nodejs-4714.azurewebsites.net";
     const [message, setMessage] = useState(null)
     const id = AsyncStorage.getItem("id");
     const [loggedIn, setLoggedIn] = useState(id);

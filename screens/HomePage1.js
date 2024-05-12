@@ -24,7 +24,7 @@ import TopicRequestContext from "../context/TopicRequest/TopicRequestContext";
 import { useFocusEffect } from "@react-navigation/native";
 import StarRating from "../components/StarRating";
 
-const host = "http://192.168.0.147:3000";
+const host = "http://helloworld-nodejs-4714.azurewebsites.net";
 
 const LiveSessionItem = ({ item, onPress }) => {
   return (
@@ -137,7 +137,7 @@ const HomePage1 = () => {
       _id: 3,
       name: "My Chats",
       url: require("../assets/icons8chats24-21.png"),
-      screen: "HomePage1",
+      screen: "ConversationsWithMessages",
     },
     {
       _id: 4,
@@ -203,7 +203,7 @@ const HomePage1 = () => {
       _id: 14,
       name: "Notifications",
       url: require("../assets/icons8notifications64-1.png"),
-      screen: "HomePage1",
+      screen: "Notifications",
     },
     {
       _id: 15,

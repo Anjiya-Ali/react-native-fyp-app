@@ -19,7 +19,7 @@ const AcceptProposal = ({ route }) => {
   const { GetPayDetails, PayTopicRequest } = context;
   const [allProposals, setAllProposals] = useState({});
   const [flag, setFlag] = useState(false);
-  const host = "http://192.168.0.147:3000";
+  const host = "http://helloworld-nodejs-4714.azurewebsites.net";
 
   useFocusEffect(
     React.useCallback(() => {

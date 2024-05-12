@@ -1,7 +1,7 @@
 // config.js
 
 const MainConfig = {
-    localhost: 'http://192.168.0.147:3000',
+    localhost: 'http://helloworld-nodejs-4714.azurewebsites.net',
     
     // Add other configuration values as needed
 };
