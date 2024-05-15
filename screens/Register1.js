@@ -9,6 +9,7 @@ import userContext from "../context/User/userContext";
 import StudentContext from '../context/StudentProfile/studentProfileContext';
 import TeacherContext from '../context/TeacherProfile/teacherProfileContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { CometChatUIKit } from "@cometchat/chat-uikit-react-native";
 
 const LoginScreen = () => {
     const navigation = useNavigation();
@@ -19,6 +20,7 @@ const LoginScreen = () => {
     const context1 = useContext(userContext);
     const {
         handleUserLogin,
+        saveToken
     } = context1;
 
     const context2 = useContext(StudentContext);
@@ -30,6 +32,17 @@ const LoginScreen = () => {
     const {
         getTeacher,
     } = context3;
+
+    const makeLogin = (uid) => {
+        CometChatUIKit.login({uid})
+        .then(user => {
+          console.log('Cometchat user logged in');
+          return true;
+        })
+        .catch(err => {
+          console.log("Error while login:", err);
+        });
+    }
 
     const handleLogin = async () => {
         if (!validateRequiredFields([email, password])) {
@@ -56,7 +69,12 @@ const LoginScreen = () => {
                 return;
             }
             else if(user.success){
+                const id = await AsyncStorage.getItem("id");
                 const name = await AsyncStorage.getItem('name');
+
+                await saveToken();
+                makeLogin(id);
+
                 if(user.role === "Student"){
                     const userProfile = await getStudent();
                     if(!userProfile.education.length){
@@ -135,7 +153,7 @@ const RegisterScreen = () => {
     const [location, setLocation] = useState('');
     const context1 = useContext(userContext);
     const {
-        handleUserLogin,
+        handleUserLogin
     } = context1;
     const countryList = [
         "Afghanistan",

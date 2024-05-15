@@ -115,57 +115,60 @@ const NotificationScreen = () => {
 
 
     return (
-        <View style={styles.container}>
+        <>
             <Header
                 heading="Notifications"
                 navigate={navigate}
             />
-            <ScrollView refreshControl={
-                <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-            }>
-                {todayNotifications.length > 0 && (
-                    <View>
-                        <Text style={styles.sectionHeader}>Today</Text>
-                        <FlatList
-                            data={todayNotifications}
-                            keyExtractor={(item) => item._id}
-                            renderItem={({ item }) => (
-                                <Notification item={item} markAsRead={MarkAsRead} />
-                            )}
-                            style={styles.inner}
-                        />
-                    </View>
-                )}
 
-                {last7DaysNotifications.length > 0 && (
-                    <View>
-                        <Text style={styles.sectionHeader}>Last 7 days</Text>
-                        <FlatList
-                            data={last7DaysNotifications}
-                            keyExtractor={(item) => item._id}
-                            renderItem={({ item }) => (
-                                <Notification item={item} markAsRead={MarkAsRead} />
-                            )}
-                            style={styles.inner}
-                        />
-                    </View>
-                )}
+            <View style={styles.container}>
+                <ScrollView refreshControl={
+                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+                }>
+                    {todayNotifications.length > 0 && (
+                        <View>
+                            <Text style={styles.sectionHeader}>Today</Text>
+                            <FlatList
+                                data={todayNotifications}
+                                keyExtractor={(item) => item._id}
+                                renderItem={({ item }) => (
+                                    <Notification item={item} markAsRead={MarkAsRead} />
+                                )}
+                                style={styles.inner}
+                            />
+                        </View>
+                    )}
 
-                {last30DaysNotifications.length > 0 && (
-                    <View>
-                        <Text style={styles.sectionHeader}>Last 30 days</Text>
-                        <FlatList
-                            data={last30DaysNotifications}
-                            keyExtractor={(item) => item._id}
-                            renderItem={({ item }) => (
-                                <Notification item={item} markAsRead={MarkAsRead} />
-                            )}
-                            style={styles.inner}
-                        />
-                    </View>
-                )}
-            </ScrollView>
-        </View>
+                    {last7DaysNotifications.length > 0 && (
+                        <View>
+                            <Text style={styles.sectionHeader}>Last 7 days</Text>
+                            <FlatList
+                                data={last7DaysNotifications}
+                                keyExtractor={(item) => item._id}
+                                renderItem={({ item }) => (
+                                    <Notification item={item} markAsRead={MarkAsRead} />
+                                )}
+                                style={styles.inner}
+                            />
+                        </View>
+                    )}
+
+                    {last30DaysNotifications.length > 0 && (
+                        <View>
+                            <Text style={styles.sectionHeader}>Last 30 days</Text>
+                            <FlatList
+                                data={last30DaysNotifications}
+                                keyExtractor={(item) => item._id}
+                                renderItem={({ item }) => (
+                                    <Notification item={item} markAsRead={MarkAsRead} />
+                                )}
+                                style={styles.inner}
+                            />
+                        </View>
+                    )}
+                </ScrollView>
+            </View>
+        </>
     );
 };
 

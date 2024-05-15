@@ -59,6 +59,9 @@ const Main = () => {
       if (role == "Teacher") { 
         navigation.navigate("TeacherHomePage"); 
       } 
+      if (role == "Admin") { 
+        navigation.navigate("AdminHomePage"); 
+      } 
       
     } 
   };

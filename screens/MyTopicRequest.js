@@ -113,11 +113,11 @@ const MyTopicRequest = () => {
 
   return (
     <>
+      <Header heading="My Topic Requests" navigate="HomePage1" />
       {flag && (
         <View
           style={{ flex: 1, flexDirection: flexD, backgroundColor: "#d9d9d9" }}
         >
-          <Header heading="My Topic Requests" navigate="HomePage1" />
           <ScrollView
             style={{
               flex: 1,

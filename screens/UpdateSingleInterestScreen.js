@@ -141,7 +141,7 @@ const UpdateSingleInterestScreen = ({ route }) => {
         </View>
         <View style={styles.sectionContainer}>
           <Text style={styles.sectionTitle}>Description</Text>
-          <TextInput style={styles.input} placeholderTextColor="black" value={interestDescription} onChangeText={(text) => setInterestDescription(text)} multiline={true}/>
+          <TextInput style={styles.input} placeholderTextColor="black" value={interestDescription} onChangeText={(text) => setInterestDescription(text)} multiline={true} editable={false}/>
         </View>
         <TouchableOpacity
           onPress={() => handleUpdateInterest(additionalData.id)}

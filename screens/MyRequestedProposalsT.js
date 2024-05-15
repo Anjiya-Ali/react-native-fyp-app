@@ -115,11 +115,11 @@ const MyRequestedProposalsT = () => {
 
   return (
     <>
+      <Header heading="Proposals" navigate="TeacherHomePage" />
       {flag && (
         <View
           style={{ flex: 1, flexDirection: flexD, backgroundColor: "#d9d9d9" }}
         >
-          <Header heading="Proposals" navigate="TeacherHomePage" />
           {allProposals.length > 0 && (
             <>
               <Text style={styles.userName1}>You have {lengthh} proposals</Text>

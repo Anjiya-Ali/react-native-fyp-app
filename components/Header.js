@@ -131,7 +131,7 @@ const Header = ({ heading, navigate = null, flag = true, data={} }) => {
         _id: 2,
         name: "Administrative Tools",
         url: require("../assets/administrativetool.png"),
-        screen: "TeacherAdminTools",
+        screen: "AdministrativeTools",
       },
       {
         _id: 4,
@@ -192,12 +192,6 @@ const Header = ({ heading, navigate = null, flag = true, data={} }) => {
         name: "Joint Account Requests",
         url: require("../assets/icons8-user-account-50.png"),
         screen: "ViewJointAccountRequests",
-      },
-      {
-        _id: 14,
-        name: "Teachers for JA",
-        url: require("../assets/teacherforJA.png"),
-        screen: "ViewMemberForJointAccount",
       },
       {
         _id: 15,

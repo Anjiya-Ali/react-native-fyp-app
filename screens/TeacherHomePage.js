@@ -137,12 +137,6 @@ const TeacherHomePage = () => {
       screen: "ViewJointAccountRequests",
     },
     {
-      _id: 14,
-      name: "Teachers for JA",
-      url: require("../assets/teacherforJA.png"),
-      screen: "ViewMemberForJointAccount",
-    },
-    {
       _id: 15,
       name: "Notifications",
       url: require("../assets/icons8notifications64-1.png"),

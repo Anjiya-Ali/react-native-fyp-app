@@ -12,12 +12,19 @@ import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
 import CourseContext from "../context/Courses/courseContext";
+import { CometChat } from "@cometchat/chat-sdk-react-native";
+import userContext from "../context/User/userContext";
+
 
 const Menu = ({ filteredOrganizations, profilePictureUrl, display, navigate }) => {
   const context = useContext(CourseContext);
   const { getUser } = context;
   const navigation = useNavigation();
   const [name, setName] = useState("");
+  const context1 = useContext(userContext);
+    const {
+        removeToken
+    } = context1;
 
   const onClickHandler = () => {
     display(false);
@@ -26,10 +33,20 @@ const Menu = ({ filteredOrganizations, profilePictureUrl, display, navigate }) =
   const handleNavigation = async (screen) => {
     if (screen === "Main") {
       try {
+        await removeToken();
+        
         await AsyncStorage.removeItem("tokenn");
         await AsyncStorage.removeItem("role");
         await AsyncStorage.removeItem("id");
         await AsyncStorage.removeItem("name");
+
+        CometChat.logout().then(
+          () => {
+            console.log("Logout completed successfully");
+          }, error => {
+            console.log("Logout failed with exception:", { error });
+          }
+        );
       } catch (error) {
         console.error("Error removing items from AsyncStorage:", error);
       }

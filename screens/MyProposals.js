@@ -98,11 +98,12 @@ const MyProposals = () => {
 
   return (
     <>
+      <Header heading="Proposals" navigate="HomePage1" />
+
       {flag && (
         <View
           style={{ flex: 1, flexDirection: flexD, backgroundColor: "#d9d9d9" }}
         >
-          <Header heading="Proposals" navigate="HomePage1" />
           {allProposals.length > 0 && (
             <>
               <Text style={styles.userName1}>You have {lengthh} proposals</Text>
@@ -145,10 +146,10 @@ const MyProposals = () => {
                               proposal.status === "Requested"
                                 ? "yellow"
                                 : proposal.status === "Closed"
-                                ? "red"
-                                : proposal.status === "Active"
-                                ? "green"
-                                : "#dc3545",
+                                  ? "red"
+                                  : proposal.status === "Active"
+                                    ? "green"
+                                    : "#dc3545",
                           }}
                         >
                           {proposal.status}

@@ -17,6 +17,7 @@ import { FontFamily, FontSize, Color, Border } from "../GlobalStyles";
 import socialHubContext from "../context/SocialHub/SocialHubContext";
 import StarRating from "../components/StarRating";
 import { useFocusEffect } from "@react-navigation/native";
+import NotificationContext from "../context/Notifications/notificationContext";
 import * as Animatable from "react-native-animatable";
 const windowWidth = Dimensions.get("window").width;
 const { height, width } = Dimensions.get("window");
@@ -34,6 +35,11 @@ const OtherProfilePage = ( {route} ) => {
     removeConnection,
     cancelFollowing,
   } = context1;
+
+  const context2 = useContext(NotificationContext);
+  const {
+    CreateNotification
+  } = context2;
 
   const [loading, setLoading] = useState(false);
   const [allInterests, setAllInterests] = useState([]);
@@ -99,12 +105,16 @@ const OtherProfilePage = ( {route} ) => {
   const handleFollow = async () => {
     await createConnection(additionalData);
     await getOtherProfile(additionalData);
+    userName = await AsyncStorage.getItem('name');
+    await CreateNotification(`${userName} has started following you.`, "MyFollowers", "New Follower", additionalData)
     setStatusBooll("Following")
   };
 
   const handleConnect = async () => {
     await createConnection(additionalData);
     await getOtherProfile(additionalData);
+    userName = await AsyncStorage.getItem('name');
+    await CreateNotification(`${userName} has sent you a friend request.`, "MyPendingConnections", "New Connection Request", additionalData)
     setStatusBooll("pending")
   };
 
@@ -125,6 +135,8 @@ const OtherProfilePage = ( {route} ) => {
   const handleAccept = async () => {
     await acceptConnection(additionalData);
     await getOtherProfile(additionalData);
+    userName = await AsyncStorage.getItem('name');
+    await CreateNotification(`${userName} has accepted your freind request.`, "MyConnections", "New Connection", additionalData)
     setStatusBooll("Friend")
   };
 

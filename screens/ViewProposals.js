@@ -151,13 +151,14 @@ const ViewProposals = ( {route} ) => {
                         )}
                     </View>
                     <View style={{ marginTop: 5, width: "100%", flexDirection: 'row', justifyContent: 'flex-end' }}>
-                        <TouchableOpacity
-                            onPress={() => handleViewProposals(topic.topic_request_id)}
-                            style={styles.viewAllButtonContainer}
-                            >
-                            <Text style={styles.viewAllButton}>  Message  </Text>
-                        </TouchableOpacity>
-                    </View>
+    <TouchableOpacity
+        onPress={() => navigation.navigate('ConversationsWithMessages')} 
+        style={styles.viewAllButtonContainer}
+    >
+        <Text style={styles.viewAllButton}>  Message  </Text> 
+    </TouchableOpacity>
+</View>
+
                 </View>
                 </View>
                   </>

@@ -6,7 +6,7 @@ import meetingSchedulingContext from "../context/MeetingScheduling/MeetingSchedu
 
 const ScheduledListItems = (props) => {
     const meetingContext = useContext(meetingSchedulingContext);
-    const { schMeetings, setschMeetings } = meetingContext;
+    const { schMeetings, setschMeetings,deleteSchedule } = meetingContext;
 
     const [deletePop, setDelete] = useState(false)
     const handleDeletion = () => {
@@ -16,6 +16,7 @@ const ScheduledListItems = (props) => {
     const handleConfirm = () => {
         const temp = [...schMeetings];
         const filteredTemp = temp.filter(item => item._id !== props.id);
+        deleteSchedule(props.id)
         setschMeetings(filteredTemp);
     }
     const dateObj = new Date(props.time);

@@ -98,11 +98,11 @@ const MyClosedProposals = () => {
 
   return (
     <>
+      <Header heading="Proposals" navigate="HomePage1" />
       {flag && (
         <View
           style={{ flex: 1, flexDirection: flexD, backgroundColor: "#d9d9d9" }}
         >
-          <Header heading="Proposals" navigate="HomePage1" />
           {allProposals.length > 0 && (
             <>
               <Text style={styles.userName1}>You have {lengthh} proposals</Text>

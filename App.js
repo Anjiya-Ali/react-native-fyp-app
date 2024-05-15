@@ -1168,6 +1168,13 @@ const App = () => {
                                                                                                                         },
                                                                                                                     }} />
                                                                                                                     <Stack.Screen
+                                                                                                                        name="AdminHomePage"
+                                                                                                                        component={AdminHomePage}
+                                                                                                                        options={{
+                                                                                                                            headerShown: false,
+                                                                                                                        }}
+                                                                                                                    />
+                                                                                                                    <Stack.Screen
                                                                                                                         name="ManageStudents"
                                                                                                                         component={ManageStudents}
                                                                                                                         options={{
