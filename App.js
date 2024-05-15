@@ -1112,22 +1112,27 @@ const App = () => {
                                                                                                                     <Stack.Screen
                                                                                                                         name="ViewAllLanguages"
                                                                                                                         component={ViewAllLanguages}
+                                                                                                                        options={{ headerShown: false }}
                                                                                                                     />
                                                                                                                     <Stack.Screen
                                                                                                                         name="ViewAllEducation"
                                                                                                                         component={ViewAllEducation}
+                                                                                                                        options={{ headerShown: false }}
                                                                                                                     />
                                                                                                                     <Stack.Screen
                                                                                                                         name="ViewAllBadges"
                                                                                                                         component={ViewAllBadges}
+                                                                                                                        options={{ headerShown: false }}
                                                                                                                     />
                                                                                                                     <Stack.Screen
                                                                                                                         name="ViewAllCertifications"
                                                                                                                         component={ViewAllCertifications}
+                                                                                                                        options={{ headerShown: false }}
                                                                                                                     />
                                                                                                                     <Stack.Screen
                                                                                                                         name="ViewAllInterests"
                                                                                                                         component={ViewAllInterests}
+                                                                                                                        options={{ headerShown: false }}
                                                                                                                     />
                                                                                                                     <Stack.Screen name="HomePage1" component={HomePage1} options={{ headerShown: false }} />
                                                                                                                     <Stack.Screen name="TeacherHomePage" component={TeacherHomePage} options={{ headerShown: false }} />

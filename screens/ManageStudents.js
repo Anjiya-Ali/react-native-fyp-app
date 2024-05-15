@@ -111,6 +111,7 @@ const ManageStudents = () => {
 
   return (
     <>
+      <Header heading="Manage Students" navigate="AdminHomePage" />
       {flag && (
         <>
           <View
@@ -120,7 +121,6 @@ const ManageStudents = () => {
               backgroundColor: "#d9d9d9",
             }}
           >
-            <Header heading="Manage Students" navigate="AdminHomePage" />
             <Text style={styles.userName1}>We have {lengthh} students</Text>
             <SearchBar
               text="Search Here"

@@ -113,6 +113,11 @@ const MyConnections = () => {
 
   return (
     <>
+      {role === "Teacher" ? (
+              <Header heading="My Connections" navigate="TeacherHomePage" />
+            ) : (
+              <Header heading="My Connections" navigate="HomePage1" />
+      )}
       {flag && (
         <>
           <View
@@ -122,11 +127,6 @@ const MyConnections = () => {
               backgroundColor: "#d9d9d9",
             }}
           >
-            {role === "Teacher" ? (
-              <Header heading="My Connections" navigate="TeacherHomePage" />
-            ) : (
-              <Header heading="My Connections" navigate="HomePage1" />
-            )}
             {allConnections.length > 0 && (
               <>
                 <Text style={styles.userName1}>

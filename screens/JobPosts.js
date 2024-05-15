@@ -80,11 +80,11 @@ const JobPosts = () => {
 
   return (
     <>
+      <Header heading="Job Posts" navigate="TeacherHomePage" />
       {flag && (
         <View
           style={{ flex: 1, flexDirection: flexD, backgroundColor: "#d9d9d9" }}
         >
-          <Header heading="Job Posts" navigate="TeacherHomePage" />
           <SearchBar
             text="Search Here"
             value={searchText}

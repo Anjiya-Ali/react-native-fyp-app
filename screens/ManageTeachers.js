@@ -112,10 +112,10 @@ const ManageTeachers = () => {
 
   return (
     <>
+    <Header heading="Manage Teachers" navigate="AdminHomePage" />
     {flag && (
       <>
       <View style={{ flex: 1, flexDirection: flexD, backgroundColor: "#d9d9d9" }}>
-        <Header heading="Manage Teachers" navigate="AdminHomePage" />
         <Text style={styles.userName1}>
             We have {lengthh} teachers
         </Text>

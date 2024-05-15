@@ -137,11 +137,11 @@ const ViewJointAccountRequests = () => {
 
   return (
     <>
+      <Header heading="Joint Account Requests" navigate="TeacherHomePage" />
       {flag && (
         <View
           style={{ flex: 1, flexDirection: flexD, backgroundColor: "#d9d9d9" }}
         >
-          <Header heading="Joint Account Requests" navigate="TeacherHomePage" />
           {lengthh > 0 && (
             <>
               <SearchBar

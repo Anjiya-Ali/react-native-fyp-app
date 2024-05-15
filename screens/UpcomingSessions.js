@@ -140,6 +140,7 @@ const UpcomingSessions = () => {
 
   return (
     <>
+      <Header heading="Upcoming Sessions" navigate="HomePage1" />
       {flag && (
         <>
           <View
@@ -149,7 +150,6 @@ const UpcomingSessions = () => {
               backgroundColor: "#d9d9d9",
             }}
           >
-            <Header heading="Upcoming Sessions" navigate="HomePage1" />
             <ScrollView
               style={{
                 flex: 1,

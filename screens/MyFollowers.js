@@ -71,6 +71,7 @@ const MyFollowers = () => {
     );
     setLengthh(lengthh - 1);
     setShowRejectModal(false);
+    navigation.navigate('MyConnections')
   };
 
   const [refreshing, setRefreshing] = useState(false);
@@ -108,11 +109,11 @@ const MyFollowers = () => {
 
   return (
     <>
+      <Header heading="My Followers" navigate="TeacherHomePage" />
       {flag && (
         <View
           style={{ flex: 1, flexDirection: flexD, backgroundColor: "#d9d9d9" }}
         >
-          <Header heading="My Followers" navigate="TeacherHomePage" />
           {allFollowers.length > 0 && (
             <>
               <Text style={styles.userName1}>You have {lengthh} followers</Text>

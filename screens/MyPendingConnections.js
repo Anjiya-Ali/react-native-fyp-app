@@ -61,22 +61,24 @@ const MyPendingConnections = () => {
 
   const handleAcceptRequest1 = async (connectionId) => {
     await acceptRequest(connectionId);
-    setLocalRequests(
-      localRequests.filter((request) => request.id !== connectionId)
+    setFilteredData(
+      filteredData.filter((request) => request.id !== connectionId)
     );
     setLengthh(lengthh - 1);
     setShowAcceptModal(false);
     userName = await AsyncStorage.getItem('name');
     await CreateNotification(`${userName} has accepted your friend request.`, "MyConnections", "New Connection", connectionId)
+    navigation.navigate('MyConnections')
   };
 
   const handleRejectRequest1 = async (connectionId) => {
     await rejectRequest(connectionId);
-    setLocalRequests(
-      localRequests.filter((request) => request.id !== connectionId)
+    setFilteredData(
+      filteredData.filter((request) => request.id !== connectionId)
     );
     setLengthh(lengthh - 1);
     setShowRejectModal(false);
+    navigation.navigate('MyConnections')
   };
 
   useFocusEffect(
@@ -141,15 +143,15 @@ const MyPendingConnections = () => {
 
   return (
     <>
+      {role === "Teacher" ? (
+            <Header heading="My Pending Requests" navigate="TeacherHomePage" />
+          ) : (
+            <Header heading="My Pending Requests" navigate="HomePage1" />
+      )}
       {flag && (
         <View
           style={{ flex: 1, flexDirection: flexD, backgroundColor: "#d9d9d9" }}
         >
-          {role === "Teacher" ? (
-            <Header heading="My Pending Requests" navigate="TeacherHomePage" />
-          ) : (
-            <Header heading="My Pending Requests" navigate="HomePage1" />
-          )}
           {allPendingConnections.length > 0 && (
             <>
               <Text style={styles.userName1}>You have {lengthh} requests</Text>
